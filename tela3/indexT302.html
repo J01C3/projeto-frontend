@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cpaas</title>
+  <link rel="stylesheet" href="style-tela.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Espaço maior entre os itens no menu */
+    .navbar-nav .nav-item {
+      margin-left: 20px; /* Aumenta o espaço entre os itens */
+    }
+
+    /* Estilo para o botão de modo escuro/claro */
+    .mode-toggle {
+      margin-right: 30px; /* Afastar o botão do canto direito */
+      border: 2px solid rgba(255, 255, 255, 0); /* Adiciona a borda branca */
+      border-radius: 50%; /* Torna o botão arredondado */
+      padding: 5px; /* Adiciona um pequeno preenchimento para o botão */
+      background-color: transparent; /* Fundo transparente */
+      transition: border-color 0.3s ease; /* Adiciona uma transição suave para a borda */
+    }
+
+    /* Mudança de cor ao passar o mouse sobre o botão */
+    .mode-toggle:hover {
+      border-color: #ffffff00; /* Pode usar um branco mais suave ou qualquer outra cor */
+    }
+
+    /* Opcional: Adiciona um foco mais claro quando o botão for focado */
+    .mode-toggle:focus {
+      outline: none; /* Remove o contorno padrão */
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6); /* Adiciona um foco suave com borda branca */
+    }
+
+    /* Estilo para o submenu */
+    .dropdown-menu {
+      display: none; /* Inicialmente escondido */
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block; /* Exibe o submenu ao passar o mouse ou ao clicar */
+    }
+
+    /* Mudança da cor do texto e fundo no modo escuro */
+    .navbar-dark .navbar-nav .nav-link {
+      color: #f0f0f0; /* Cor clara para o texto dos links no modo escuro */
+    }
+
+    .bg-dark .navbar-dark .navbar-nav .nav-link {
+      color: #f0f0f0; /* Cor clara para o texto dos links no modo escuro */
+    }
+
+    /* Alterando a cor do hover para um tom mais visível */
+    .navbar-nav .nav-link:hover {
+      color: #ffcc00; /* Cor de hover dos links */
+    }
+
+    /* Estilo para a navbar no modo escuro */
+    .navbar-dark {
+      background-color: #333333 !important; /* Cor de fundo mais escura para a barra de navegação */
+    }
+
+    /* Definir cor dos links no modo claro */
+    .navbar-light .navbar-nav .nav-link {
+      color: #333; /* Cor escura para o texto dos links no modo claro */
+    }
+
+    /* Alterando a cor do texto ao passar o mouse sobre o link */
+    .navbar-nav .nav-link:hover {
+      color: #ffcc00; /* Cor do hover para os links */
+    }
+  </style>
+</head>
+<body class="bg-light text-dark">
+  <!-- Barra de navegação -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <div class="container-fluid">
+      <!-- Link de logo ou imagem -->
+      <a class="navbar-brand" href="#">
+        <img id="imglogo" src="img.03/logo-hdr-475x110.png" alt="Logo" width="180" height="40">
+      </a>
+      <!-- Botão de menu para dispositivos móveis -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Itens de navegação -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cadastre-se</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          <!-- Menu dropdown para "Serviços" -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Serviços
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Internet Dedicada</a></li>
+              <li><a class="dropdown-item" href="#">Banda Larga</a></li>
+              <li><a class="dropdown-item" href="#">Wi-Fi</a></li>
+              <li><a class="dropdown-item" href="#">Suporte</a></li>
+            </ul>
+          </li>
+          <!-- Botão para alternar entre os modos -->
+          <li class="nav-item">
+            <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo">
+              <i class="bi bi-moon-stars"></i> <!-- Ícone da lua (modo escuro) -->
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scripts do Bootstrap (JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Função para alternar entre o modo claro e escuro
+    const modeToggle = document.getElementById('modeToggle');
+    const body = document.body;
+    const navbar = document.getElementById('navbar');
+
+    // Verificar se o modo escuro está armazenado no localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('bg-dark', 'text-light');
+      navbar.classList.remove('navbar-light');
+      navbar.classList.add('navbar-dark');
+      navbar.style.backgroundColor = '#333'; // Definindo a cor escura da navbar
+      modeToggle.innerHTML = '<i class="bi bi-sun"></i>'; // Ícone do sol (modo claro)
+    }
+
+    modeToggle.addEventListener('click', () => {
+      // Alterna entre o modo claro e escuro
+      if (body.classList.contains('bg-light')) {
+        body.classList.remove('bg-light', 'text-dark');
+        body.classList.add('bg-dark', 'text-light');
+        navbar.classList.remove('navbar-light');
+        navbar.classList.add('navbar-dark');
+        navbar.style.backgroundColor = '#333'; // Definindo a cor escura da navbar
+        modeToggle.innerHTML = '<i class="bi bi-sun"></i>'; // Ícone do sol (modo claro)
+        localStorage.setItem('theme', 'dark'); // Salva o tema no localStorage
+      } else {
+        body.classList.remove('bg-dark', 'text-light');
+        body.classList.add('bg-light', 'text-dark');
+        navbar.classList.remove('navbar-dark');
+        navbar.classList.add('navbar-light');
+        navbar.style.backgroundColor = ''; // Retorna a cor original no modo claro
+        modeToggle.innerHTML = '<i class="bi bi-moon-stars"></i>'; // Ícone da lua (modo escuro)
+        localStorage.setItem('theme', 'light'); // Salva o tema no localStorage
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
