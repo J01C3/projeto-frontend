@@ -4,82 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cpaas</title>
-  <link rel="stylesheet" href="style-tela.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="shortcut icon" href="img.03/favicon.ico" type="image/x-icon">
+  
   <style>
-    /* Espaço maior entre os itens no menu */
-    .navbar-nav .nav-item {
-      margin-left: 20px; /* Aumenta o espaço entre os itens */
-    }
+  /* Espaço maior entre os itens no menu */
+.navbar-nav .nav-item {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
 
-    /* Estilo para o botão de modo escuro/claro */
-    .mode-toggle {
-      margin-right: 30px; /* Afastar o botão do canto direito */
-      border: 2px solid rgba(255, 255, 255, 0); /* Adiciona a borda branca */
-      border-radius: 50%; /* Torna o botão arredondado */
-      padding: 5px; /* Adiciona um pequeno preenchimento para o botão */
-      background-color: transparent; /* Fundo transparente */
-      transition: border-color 0.3s ease; /* Adiciona uma transição suave para a borda */
-    }
+  /* Estilo para o botão de modo escuro/claro */
+  .mode-toggle {
+    margin-right: 65px; /* Afastar o botão do canto direito */
+    margin-left: -32.5px;
+    border: 2px solid rgba(255, 255, 255, 0); /* Adiciona a borda branca */
+    border-radius: 50%; /* Torna o botão arredondado */
+    padding: 10px; /* Adiciona um pequeno preenchimento para o botão */
+    background-color: transparent; /* Fundo transparente */
+    transition: border-color 0.3s ease; /* Adiciona uma transição suave para a borda */
+  }
 
-    /* Mudança de cor ao passar o mouse sobre o botão */
-    .mode-toggle:hover {
-      border-color: #ffffff00; /* Pode usar um branco mais suave ou qualquer outra cor */
-    }
+  /* Mudança de cor ao passar o mouse sobre o botão */
+  .mode-toggle:hover {
+    border-color: #ffffff00; /* Pode usar um branco mais suave ou qualquer outra cor */
+  }
 
-    /* Opcional: Adiciona um foco mais claro quando o botão for focado */
-    .mode-toggle:focus {
-      outline: none; /* Remove o contorno padrão */
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6); /* Adiciona um foco suave com borda branca */
-    }
+  /* Opcional: Adiciona um foco mais claro quando o botão for focado */
+  .mode-toggle:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0); /* Adiciona um foco suave com borda branca */
+  }
 
-    /* Estilo para o submenu */
-    .dropdown-menu {
-      display: none; /* Inicialmente escondido */
-    }
+  /* Estilo para o submenu */
+  .dropdown-menu {
+    display: none; /* Inicialmente escondido */
+  }
 
-    .dropdown:hover .dropdown-menu {
-      display: block; /* Exibe o submenu ao passar o mouse ou ao clicar */
-    }
+  .dropdown:hover .dropdown-menu {
+    display: block; /* Exibe o submenu ao passar o mouse ou ao clicar */
+  }
 
-    /* Mudança da cor do texto e fundo no modo escuro */
-    .navbar-dark .navbar-nav .nav-link {
-      color: #f0f0f0; /* Cor clara para o texto dos links no modo escuro */
-    }
+  /* Mudança da cor do texto e fundo no modo escuro */
+  .navbar-dark .navbar-nav .nav-link {
+    color: #f0f0f0; /* Cor clara para o texto dos links no modo escuro */
+  }
 
-    .bg-dark .navbar-dark .navbar-nav .nav-link {
-      color: #f0f0f0; /* Cor clara para o texto dos links no modo escuro */
-    }
+  .bg-dark .navbar-dark .navbar-nav .nav-link {
+    color: #f0f0f0; /* Cor clara para o texto dos links no modo escuro */
+  }
 
-    /* Alterando a cor do hover para um tom mais visível */
-    .navbar-nav .nav-link:hover {
-      color: #ffcc00; /* Cor de hover dos links */
-    }
+  /* Alterando a cor do hover para um tom mais visível */
+  .navbar-nav .nav-link:hover {
+    color: #ffcc00; /* Cor de hover dos links */
+  }
 
-    /* Estilo para a navbar no modo escuro */
-    .navbar-dark {
-      background-color: #333333 !important; /* Cor de fundo mais escura para a barra de navegação */
-    }
+  /* Estilo para a navbar no modo escuro */
+  .navbar-dark {
+    background-color: #333333 !important; /* Cor de fundo mais escura para a barra de navegação */
+  }
 
-    /* Definir cor dos links no modo claro */
-    .navbar-light .navbar-nav .nav-link {
-      color: #333; /* Cor escura para o texto dos links no modo claro */
-    }
+  /* Definir cor dos links no modo claro */
+  .navbar-light .navbar-nav .nav-link {
+    color: #333; /* Cor escura para o texto dos links no modo claro */
+  }
 
-    /* Alterando a cor do texto ao passar o mouse sobre o link */
-    .navbar-nav .nav-link:hover {
-      color: #ffcc00; /* Cor do hover para os links */
-    }
-  </style>
+  /* Alterando a cor do texto ao passar o mouse sobre o link */
+  .navbar-nav .nav-link:hover {
+    color: #ffcc00; /* Cor do hover para os links */
+  }
+
+  /*linha abaixo de home */
+  .nav-link.active {
+  border-bottom: 2px solid #53B2ED; /* ou a cor que quiser */
+  font-weight: normal; /* opcional: deixa o texto em negrito */
+ }
+ /* hover nos outros botões */
+ .nav-link:not(.active):hover {
+  border-bottom: 2px solid #53B2ED;
+}
+
+.bg-dark .bi-sun {
+  color: #ffffff;
+}
+
+</style>
+
 </head>
 <body class="bg-light text-dark">
   <!-- Barra de navegação -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" id="navbar">
     <div class="container-fluid">
       <!-- Link de logo ou imagem -->
-      <a class="navbar-brand" href="#">
-        <img id="imglogo" src="img.03/logo-hdr-475x110.png" alt="Logo" width="180" height="40">
+      <a class="navbar-brand ms-5" href="#">
+        <img id="imglogo" src="img.03/logo-hdr-475x110.png" alt="Logo" width="155" height="35.50">
       </a>
       <!-- Botão de menu para dispositivos móveis -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
@@ -89,7 +108,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Menu</a>
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Cadastre-se</a>
@@ -103,10 +122,10 @@
               Serviços
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Internet Dedicada</a></li>
-              <li><a class="dropdown-item" href="#">Banda Larga</a></li>
-              <li><a class="dropdown-item" href="#">Wi-Fi</a></li>
-              <li><a class="dropdown-item" href="#">Suporte</a></li>
+              <li><a class="dropdown-item" href="#">2FA</a></li>
+              <li><a class="dropdown-item" href="#">Número Máscara</a></li>
+              <li><a class="dropdown-item" href="#">Google Verified Calls</a></li>
+              <li><a class="dropdown-item" href="#">SMS Programável</a></li>
             </ul>
           </li>
           <!-- Botão para alternar entre os modos -->
