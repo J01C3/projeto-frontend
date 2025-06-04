@@ -24,7 +24,6 @@
         text-align: right;
       }
     }
-    
     * {
       font-family: 'Titillium Web', sans-serif;
     }
@@ -355,6 +354,7 @@
     }
 
     /*section-5*/
+
     .h3-5::after {
       width: 50%!important;
       transform: translateX(-35px)!important;
@@ -415,59 +415,21 @@
     
     }
 
-    /*circulos azuis*/
     .section-6 {
      display: flex; /* Alinha os círculos em linha */
      flex-direction: row;
-     flex-wrap: wrap;
-     align-items: center;
-     gap: 115px; /* Espaço entre os círculos */
+     gap: 80px; /* Espaço entre os círculos */
      margin: 95px; /* Margem ao redor do container */
      margin-top: 150px;
    }
 
    .circulo {
-     width: 170px; /* Largura do círculo */
-     height: 170px; /* Altura do círculo */
+     width: 200px; /* Largura do círculo */
+     height: 200px; /* Altura do círculo */
      background-color: #53B2ED; /* Cor azul */
      border-radius: 50%; /* Deixa o formato redondo */
-     transition: transform 0.3s ease;
-   }
+    }
 
-   .circulo img {
-    width: 100%;
-    height: 100%;
-    display: flex; /* centraliza a imagem */
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* evita que a imagem ultrapasse o círculo */
-   }
-
-   .circulo:hover {
-     transform: scale(1.1);
-     background-color: #2980b9;
-   }
-
-   .circulos {
-     display: flex;
-     gap: 35px;
-     flex: 1 0 55%;         /* 4 colunas no desktop */
-     max-width: 16%;
-     box-sizing: border-box;
-     text-align: center;
-     flex-direction: column; /* Empilha o círculo e o texto */
-     align-items: center; /* Centraliza horizontalmente */
-     text-align: center;
-  }
-
-  .circulos p {
-    font-weight: 600;
-    font-size: 20px;
-  }
-
-
-
-    /*RESPONSIVIDADE*/
     @media (max-width: 767px) {
       .main-container {
         flex-direction: column;
@@ -610,86 +572,7 @@
     order: -1;
   }
 
-    /*section-5*/
-    .h3-5 {
-      font-size: 20px;
-    }
-    .h3-5::after {
-      width: 50%!important;
-      transform: translateX(-45px)!important;
-      margin-bottom: 30px;
-    }
-
-    .vantagens {
-      margin-left: -75px;
-      list-style-type: none;
-      padding-top: 25px;
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-    }
-
-    .vantagens .li-azul  {
-      list-style: none;
-      font-size: 15px;
-      font-weight: 600;
-      color: #53B2ED;
-    }
-
-    .vantagens .li-normal  {
-      list-style: none;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .vantagens li {
-      margin-bottom: 20px;  /* Ajuste o valor conforme quiser */
-      flex-direction: column;
-    }
-
-     /*caixa-azul-2*/
-    .caixa-azul-2 {
-      display: block;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      text-align: center;
-      font-size: large;
-      height: 40%;
-      width: 40%;
-    }
-   
-
-    /*section-6*/
-  .circulos {
-    flex: 0 1 50%;
-    max-width: 25%;
-    gap: 20px;
-    margin-left: -50px;
-    margin-right: 0;
-  
   }
-  .section-6 {
-    display: flex;
-    flex-wrap: wrap;            /* Permitir quebra de linha */
-    justify-content: center;    /* Centraliza os itens */
-    gap: 60px 190px;   
-    padding: -110px;          /* Espaçamento entre linhas e colunas */
-   }
-
-
-
-  .circulo {
-    width: 160px;
-    height: 160px;
-  }
-
-  .circulos .p-pa {
-    font-size: 16px;
-  }
-}
-
-  
   </style>
 </head>
 <body class="bg-light text-dark">
@@ -745,16 +628,16 @@
           <img src="img.03/exemplo-01.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
         </div>
         <div class="carousel-item">
-          <img src="../imagens-projeto/carosel-2FA.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          <img src="https://picsum.photos/id/1017/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
         </div>
         <div class="carousel-item">
-          <img src="../imagens-projeto/carosel-mascara.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          <img src="https://picsum.photos/id/1018/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
         </div>
         <div class="carousel-item">
-          <img src="../imagens-projeto/carosel-google.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          <img src="https://picsum.photos/id/1019/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
         </div>
         <div class="carousel-item">
-          <img src="../imagens-projeto/carosel-SMS.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          <img src="https://picsum.photos/id/1020/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -932,42 +815,10 @@
 
     <!--Section-6-->
     <section class="section-6">
-
-      <div class="circulos">
-        <a href="https://www.telecall.com/" target="_blank" rel="noopener noreferrer">
-         <div class="circulo">
-           <img src="../imagens-projeto/icone-cadeado.png" alt="ìcone Cadeado">
-         </div>
-        </a>
-        <p class="p-pa">2FA</p>
-      </div>
-
-      <div  class="circulos">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-         <div class="circulo">
-           <img src="../imagens-projeto/icone-celular.png" alt="ìcone Celular">
-         </div>
-        </a>
-        <p class="p-pa">Número Máscara</p>
-      </div>
-
-      <div  class="circulos">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-         <div class="circulo">
-           <img src="../imagens-projeto/icone-cheking.png" alt="">
-         </div>
-        </a>
-        <p class="p-pa">Google Verified Calls</p>
-      </div>
-
-      <div  class="circulos">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-         <div class="circulo">
-           <img src="../imagens-projeto/icone-chat.png" alt="ícone SMS">
-         </div>
-        </a>
-        <p class="p-pa">SMS Programável</p>
-      </div>
+      <div class="circulo"></div>
+      <div class="circulo"></div>
+      <div class="circulo"></div>
+      <div class="circulo"></div>
     </section>
     
        
@@ -1027,6 +878,11 @@
   </script>
 </body>
 </html>
+
+
+
+
+
 
 
 

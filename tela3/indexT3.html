@@ -3,126 +3,646 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cpaas</title>
+  <meta name="description" content="Plataforma CPaaS com serviços de comunicação integrados.">
+  <title>CPaaS - Plataforma de Comunicação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
-  
+  <link rel="shortcut icon" href="img.03/favicon.ico" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <style>
-    /* Espaço maior entre os itens no menu */
+    @media (min-width: 768px) {
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .navbar-nav .dropdown-menu {
+        right: 0;
+        left: auto;
+        text-align: right;
+      }
+    }
+    
+    * {
+      font-family: 'Titillium Web', sans-serif;
+    }
+    body, nav, .navbar-nav .nav-link, .dropdown-menu {
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    #imglogo {
+      transition: all 0.5s ease;
+    }
     .navbar-nav .nav-item {
       margin-left: 25px;
       margin-right: 25px;
     }
-
-    /* Estilo para o botão de modo escuro/claro */
-    .mode-toggle {
-      margin-right: 65px;
-      margin-left: -32.5px;
-      border: 2px solid rgba(255, 255, 255, 0);
+    .mode-toggle, .font-toggle {
+      margin-right: 15px;
+      border: 2px solid transparent;
       border-radius: 50%;
       padding: 10px;
       background-color: transparent;
       transition: border-color 0.3s ease;
     }
-
-    .mode-toggle:hover {
+    .mode-toggle:hover, .font-toggle:hover {
       border-color: #ffffff00;
     }
-
-    .mode-toggle:focus {
+    .mode-toggle:focus, .font-toggle:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0);
+      box-shadow: 0 0 0 3px transparent;
     }
-
-    /* Estilo para o submenu */
-    .dropdown-menu {
+    .dropdown-toggle::after {
       display: none;
     }
-
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    /* Mudança da cor do texto e fundo no modo escuro */
     .navbar-dark .navbar-nav .nav-link {
       color: #f0f0f0;
     }
-
     .bg-dark .navbar-dark .navbar-nav .nav-link {
       color: #f0f0f0;
     }
-
     .navbar-nav .nav-link:hover {
       color: #ffcc00;
     }
-
     .navbar-dark {
       background-color: #333333 !important;
     }
-
     .navbar-light .navbar-nav .nav-link {
       color: #333;
     }
-
     .nav-link.active {
       border-bottom: 2px solid #53B2ED;
       font-weight: normal;
     }
-
     .nav-link:not(.active):hover {
       border-bottom: 2px solid #53B2ED;
     }
-
-    /* Ícone de sol branco no modo escuro */
     .bg-dark .bi-sun-fill {
       color: #ffffff;
     }
-
     .bg-light .bi-moon-stars-fill {
       color: #777777;
     }
+    .bg-dark .font-toggle i {
+      color: #ffffff;
+    }
+    .bg-light .font-toggle i {
+      color: #333333;
+    }
+    .triangle-down {
+      display: inline-block;
+      width: 0; 
+      height: 0; 
+      margin-left: 6px;
+      vertical-align: middle;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #555;
+    }
+    .content-left {
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+    #Modavo-PNG {
+      max-width: 300px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    #h2-principal {
+      position: relative;
+      margin-left: 44px;
+      margin-top: 9px;
+      padding-bottom: 10px;
+      display: inline-block;
+      color: #53B2ED;
+      font-weight: 600;
+    }
+    #h2-principal::after {
+      content: "";
+      display: block;
+      margin-top: 6.5px;
+      width: 50%;
+      border-bottom: 2px solid #53B2ED;
+      transform: translateX(-30px);
+    }
+    .main-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 50px;
+      margin-left: 30px;
+      margin-right: 30px;
+      gap: 20px;
+    }
+    #carouselExampleIndicators {
+      width: 750px;
+      height: 310px;
+      flex-shrink: 0;
+      margin-left: 180px;
+    }
+    #carouselExampleIndicators .carousel-inner,
+    #carouselExampleIndicators .carousel-item,
+    #carouselExampleIndicators img {
+      height: 310px;
+      object-fit: cover;
+    }
+    
+    #Modavo-API {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      margin-top: 30px;
+      margin-left: -5%;
+    }
+
+    .after-carousel {
+      display: flex;
+      flex-direction: row;
+      margin-left: 50px;
+      margin-top: 50px;
+      padding-left: 50px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    #h3-1 {
+      position: relative;
+      padding-top: 80px;
+      display: inline-block;
+      font-weight: 800;
+    }
+    #h3-1::after {
+      content: "";
+      display: block;
+      margin-top: 6.5px;
+      width: 50%;
+      border-bottom: 2px solid #53B2ED;
+      transform: translateX(-30px);
+    }
+    
+    .section-1 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: left;
+      width: 100%;
+      min-width: 100px;
+      padding-left: 50px;
+    }
+
+    #p-h3-1 {
+      padding-top: 9px;
+      font-weight: 600;
+      font-size: large;
+      color: #53B2ED;
+    }
+    #p-h3-2 {
+      margin-top: -15px;
+      font-weight: 600;
+      font-size: large;
+      font-style: italic;
+    }
+    .p-h3 {
+      margin-top: 15px;
+      width: 500px;
+      font-size: larger;
+      font-weight: 500;
+      line-height: 1.5;
+      white-space: normal;
+    }
+
+    .caixa-azul { 
+      position: relative;
+      justify-items: center;
+      background-color: #53B2ED;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* sombra suave */
+      padding: 25px;
+      margin: 30px auto;
+      font-size: large;
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #h3-1::after {
+      content: "";
+      display: block;
+      margin-top: 6.5px;
+      width: 50%;
+      border-bottom: 2px solid #53B2ED;
+      transform: translateX(-30px);
+    }
+    .h3-2::after {
+      width: 25%!important;
+      transform: translateX(-30px)!important;
+    }
+
+    .section-2 {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px; /* espaço entre o texto e a imagem */
+    }
+
+    .img-section2 {
+      display: flex;
+      max-width: 560px;
+      height: auto;
+      margin-left: 160px !important;
+    }
+
+    .h3-3::after {
+      width: 115%!important;
+      transform: translateX(-30px)!important;
+      margin-bottom: 40px;
+    }
+
+
+    /*ícones */
+
+    .icones {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Espaço entre as imagens */
+      align-items: flex-start;
+      flex-wrap: wrap; /* Caso não caiba, quebra para a próxima linha */
+      margin-left: -190px;
+    }
+
+    .item {
+      text-align: center;
+      width: 180px;
+      margin-left: 155px;
+    }
+
+    .item img {
+      margin: 25px;
+      width: 100%;
+      height: auto;
+      padding-bottom: 10px;
+      align-items: center;
+    }
+
+    /* hover ícones */
+    .icones img {
+      transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
+    }
+
+    .icones img:hover {
+      transform: scale(1.1) translateY(-5px); /* aumenta e sobe um pouco */
+      opacity: 0.8; /* dá um leve efeito de transparência */
+    }
+
+    .p-item { 
+      font-size: larger;
+      font-weight: 600;
+      color: #53B2ED;
+      font-size: 30px;
+      padding-top: 10px;
+      margin-left: 40px;
+    }
+
+    /* hover tópicos em azul */
+    .p-item {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .p-item:hover {
+      color: #297aac; /* cor azul, você pode trocar por outra */
+      transform: translateY(-3px); /* sobe um pouco */
+    }
+
+    .li-icone {
+      list-style-type: none;
+      margin-right: 60px;
+      width: 100%;
+      gap: 10px;
+      font-size: larger;
+      font-weight: 500;
+      white-space: normal;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+    
+    }
+
+    .h3-4::after {
+      width: 60% !important;
+      transform: translateX(-30px)!important;
+      margin-bottom: 10px;
+    }
+
+
+    #img-q {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding-top: 5px; /*espaço entre os blocos */
+      padding-bottom: 15px; 
+    }
+
+    .ex img {
+      max-width: 30%;
+      height: auto;
+      border: 1px solid #53B2ED; /* Define a borda azul com 2px de espessura */
+      border-radius: 4px;     /* Opcional: bordas levemente arredondadas */
+      padding: 0px;
+    }
+
+    /*section-5*/
+
+    .h3-5::after {
+      width: 50%!important;
+      transform: translateX(-35px)!important;
+      margin-bottom: 30px;
+    }
+
+    .vantagens {
+      margin-left: 60px;
+      list-style-type: none;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+    }
+
+    .vantagens .li-azul  {
+      list-style: none;
+      font-size: 25px;
+      font-weight: 600;
+      color: #53B2ED;
+    }
+
+    .vantagens .li-normal  {
+      list-style: none;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .vantagens li {
+      margin-bottom: 30px;  /* Ajuste o valor conforme quiser */
+    }
+
+    .vantagens .li-normal  {
+      list-style: none;
+    }
+
+     /*Caixa-azul-2*/
+
+    .Caixa-azul-2 {
+      display: block;
+      flex-direction: column !important;
+      position: relative;
+      
+      justify-items: center;
+      background-color: #53B2ED;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* sombra suave */
+      
+      padding: 40px;
+      margin: 80px auto;
+      font-size: 40px;
+      max-width: 650px;
+      max-height: 900px;
+      width: 100%;
+      text-align: center;
+      gap: 30px;
+    
+    }
+
+    /*circulos azuis*/
+    .section-6 {
+     display: flex; /* Alinha os círculos em linha */
+     flex-direction: center;
+     align-items: center;
+     gap: 115px; /* Espaço entre os círculos */
+     margin: 95px; /* Margem ao redor do container */
+     margin-top: 150px;
+   }
+
+   .circulo {
+     width: 170px; /* Largura do círculo */
+     height: 170px; /* Altura do círculo */
+     background-color: #53B2ED; /* Cor azul */
+     border-radius: 50%; /* Deixa o formato redondo */
+     transition: transform 0.3s ease;
+   }
+
+   .circulo img {
+    width: 100%;
+    height: 100%;
+    display: flex; /* centraliza a imagem */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* evita que a imagem ultrapasse o círculo */
+   }
+
+   .circulo:hover {
+     transform: scale(1.1);
+     background-color: #2980b9;
+   }
+
+   .circulos {
+     display: flex;
+     gap: 35px;
+     flex-direction: column; /* Empilha o círculo e o texto */
+     align-items: center; /* Centraliza horizontalmente */
+     text-align: center;
+  }
+
+  .circulos p {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+
+
+    /*RESPONSIVIDADE*/
+    @media (max-width: 767px) {
+      .main-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10px;
+        margin-top: 40px;
+      }
+      #carouselExampleIndicators {
+        margin-left: 10px !important;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .content-left {
+        margin-left: 0;
+        margin-top: 0;
+        text-align: left;
+      }
+      #Modavo-PNG {
+        max-width: 260px;
+        margin: 0 0 10px 0;
+        margin-top: 35px;
+      }
+      #h2-principal {
+        margin-left: 35px;
+      }
+      #h2-principal::after {
+        transform: translateX(-10px);
+      }
+      
+      #Modavo-API {
+        width: 100%;
+        max-width: 800px;
+        margin-left: -50px !important;
+        height: auto;
+      } 
+
+      .section-1 {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: -80px;
+        margin-top: -10px;
+      }
+
+      .p-h3 {
+      margin-top: 15px;
+      width: 400px;
+      font-size: larger;
+      font-weight: 500;
+      line-height: 1.5;
+      white-space: normal;
+    }
+
+    .caixa-azul {
+      align-items: flex-start;
+      justify-items: center;
+      text-align: center;
+      margin-left: auto;
+      font-size: large;
+      margin-right: 75px;
+      height: 90%;
+      width: 90%;
+    }
+
+    .section-2 {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: -30px;
+        padding-left: -95px;
+        
+      }
+
+    #Cpaas-API {
+        width: 100%;
+        max-width: 600px;
+        margin-left: -25px !important;
+        height: auto;
+    } 
+
+  
+  .icones {
+    grid-template-columns: 1fr;
+    max-width: 40%;
+    margin-left: 45px;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .item {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .item img {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .li-icone {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    font-size: 18px;
+    align-items: center;
+  }
+
+  .p-item {
+    font-size: 40px;
+    padding-left: 25px;
+    margin-left: 15px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  #p-v-s {
+    margin-left: 0px ;
+  }
+
+  #cc {
+   vertical-align: baseline;
+  }
+
+
+    .ex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; 
+    }
+
+    .ex img {
+    width: 90vw; /* ou ajuste como quiser */
+    max-width: 300px;
+    align-items: center;
+  }
+
+  #img-B {
+    order: -1;
+  }
+
+  }
   </style>
 </head>
 <body class="bg-light text-dark">
-  <!-- Barra de navegação -->
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" id="navbar">
     <div class="container-fluid">
-      <!-- Link de logo ou imagem -->
       <a class="navbar-brand ms-5" href="#">
-        <img id="imglogo" src="img.03/logo-clara.png" alt="Logo" width="155" height="35.50">
+        <img id="imglogo" src="img.03/logo-clara.png" alt="Logo" width="155" height="35.5">
       </a>
-      <!-- Botão de menu para dispositivos móveis -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Itens de navegação -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cadastre-se</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <!-- Menu dropdown para "Serviços" -->
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cadastre-se</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Serviços
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              Serviços <span class="triangle-down"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">2FA</a></li>
               <li><a class="dropdown-item" href="#">Número Máscara</a></li>
               <li><a class="dropdown-item" href="#">Google Verified Calls</a></li>
               <li><a class="dropdown-item" href="#">SMS Programável</a></li>
             </ul>
           </li>
-          <!-- Botão para alternar entre os modos -->
           <li class="nav-item">
             <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo">
-              <i class="bi bi-moon-stars"></i>
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="font-toggle" id="fontToggle" aria-label="Ajustar tamanho da fonte">
+              <i class="bi bi-fonts fs-5"></i>
             </button>
           </li>
         </ul>
@@ -130,49 +650,292 @@
     </div>
   </nav>
 
-  <!-- Scripts do Bootstrap (JS) -->
+  <div class="main-container">
+    <div class="content-left">
+      <img src="img.03/Modavo-PNG.png" id="Modavo-PNG" alt="Imagem canto superior">
+      <h2 id="h2-principal">CPaaS PLATFORM</h2>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators"></div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img.03/exemplo-01.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+        </div>
+        <div class="carousel-item">
+          <img src="../imagens-projeto/carosel-2FA.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/id/1018/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+        </div>
+        <div class="carousel-item">
+          <img src="../imagens-projeto/carosel-google.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+        </div>
+        <div class="carousel-item">
+          <img src="../imagens-projeto/carosel-SMS.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="after-carousel">
+    <img src="img.03/Modavo-01-gt.png" alt="Modavo API" id="Modavo-API" class="me-3">
+
+    <!--Section-1-->
+    <section class="section-1">
+      <h3 class="mt-3 mt-md-0" id="h3-1">CPaaS: O que é?</h3>
+      <p id="p-h3-1">Communications Platform as a Service</p>
+      <p id="p-h3-2">Plataforma de Comunicação como Serviço</p>
+      <p class="p-h3">
+        É uma solução de software de comunicação que atua
+        como uma base sobre a qual desenvolvedores podem
+        integrar uma variedade de aplicativos.
+      </p>
+      <p class="p-h3">
+        Métodos de comunicação típicos, como voz, chamadas
+        de vídeo ou mensagens de texto SMS, podem ser
+        incorporados em outros sistemas por meio de APIs que
+        se conectam à plataforma CPaaS.
+      </p>
+    </section>
+
+    <!--Caixa-azul-->
+    <article class="caixa-azul">
+      <p>O CPaaS, com sua <strong>escalabilidade, flexibilidade, autenticação</strong> e segurança aprimoradas, está  <strong>revolucionando</strong> o modo como
+        as empresas habilitadas em nuvem implementam <strong>comunicações de voz, SMS e vídeo.</strong></p>
+    </article>
+
+    <!--Section-2-->
+    <section class="section-2 d-flex align-items-start">
+      <div>
+        <h3 id="h3-1" class="h3-2">CPaaS e a Transformação Digital</h3>
+        <p class="p-h3">Expectativa de crescimento estimado de
+         <strong>$ 8,2 bilhões</strong> em 2021
+         <strong>85%</strong> dos profissionais se conectam de
+         maneira diferente com colegas e clientes do que
+         faziam há apenas 5 anos.
+         As receitas de CPaaS estão crescendo mais de
+         <strong>40%</strong> ao ano.</p>
+        <p class="p-h3"><strong>CPaaS</strong> já ultrapassou o mercado de <strong>UCaaS</strong>
+         (Unified Communication as a Service).
+         Marcas que estão em <strong>múltiplos canais</strong>
+         melhoram a experiência do usuário e aumentam
+         seus resultados.</p>
+      </div>
+      <img src="../imagens-projeto/cpaas-api-t.png" alt="Exemplo CPaaS" class="img-section2 ms-4" id="Cpaas-API">
+    </section>
+
+    <!--Section-3-->
+    <section class="section-3">
+      <div>
+        <h3 id="h3-1" class="h3-3">Usos</h3>
+      </div>
+
+      <div class="icones">
+
+        <div class="item">
+          <figure>
+            <img src="../imagens-projeto/icones/caixa-api.png" alt="Ìcone de Caixa" class="img-caixa-API ms-4">
+          </figure>
+          <p class="p-item" id="p-v-s">Logistíca</p>
+
+          <ul class="li-icone">
+              <li>Acesso seguro com 2FA.</li>
+              <li>Uso de números mascarados para proteção de funcionário e cliente.</li>
+              <li>Mantenha o cliente informado sobre entrega e serviços.</li>
+              <li>Verified calling para confirmação de entregas.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <figure>
+            <img src="../imagens-projeto/icones/varejo-api.png" alt="Ìcone de varejo online" class="img-varejo-API ms-4" id="icone-API">
+          </figure>
+          <p class="p-item">Varejo</p>
+
+          <ul class="li-icone">
+            <li>Compra segura com 2FA.</li>
+            <li>Avisos sobre compras e entregas.</li>
+            <li>Upsell com novas ofertas e vantagens via SMS ou Verified Calling.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <figure>
+            <img src="../imagens-projeto/icones/call-api.png" alt="Ìcone de Call Center">
+          </figure>
+          <p class="p-item" id="cc">Call center</p>
+
+          <ul class="li-icone">
+            <li>Melhore taxas de abertura utilizando alertas SMS para confirmações.</li>
+            <li>Economia de números com o uso de um único número máscara por todos os agentes.</li>
+            <li>Verified Calling para confirmação de agendamentos.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <figure>
+            <img src="../imagens-projeto/icones/saude-api.png" alt="Ìcone de saúde">
+          </figure>
+          <p class="p-item">Saúde</p>
+
+          <ul class="li-icone">
+            <li>Acesso seguro com 2FA.</li>
+            <li>Melhore o agendamento e reduza faltas com lembretes por SMS.</li>
+            <li>Tokens de autorização para procedimentos com 2FA.</li>
+            <li>Verified Calling para avisos de resultados e agendamentos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--Section-4-->
+    <section class="section-4">
+      <div>
+        <h3 id="h3-1" class="h3-4">Exemplos</h3>
+      </div>
+
+      <div class="ex d-flex align-items-start" id="img-q">
+        <img src="../imagens-projeto/q1-a.png" alt="Gráfico de exemplo A"> 
+        <img src="../imagens-projeto/q2-b.png" alt="Gráfico de exemplo B" id="img-B">
+      </div>
+
+      <div class="ex d-flex align-items-start" id="img-q">
+        <img src="../imagens-projeto/q3-b.png" alt="Gráfico de exemplo C">
+        <img src="../imagens-projeto/q4-a.png" alt="Gráfico de exemplo D">
+      </div>
+    </section>
+
+    <!--Section-5-->
+    <section class="section-5">
+      <div>
+        <h3 id="h3-1" class="h3-5">Vantagens Telecall</h3>
+      </div>
+
+      <div class="vantagens">
+      <div>
+          <ul class="li-azul">
+            <li>Confiança</li>
+            <li>Agilidade</li>
+            <li>Garantia de Rede</li>
+            <li>Suporte ao Cliente</li>
+            <li>Preço</li>
+          </ul>
+      </div>
+      <div>
+          <ul class="li-normal">
+            <li>Empresa que já conhecem e confiam;</li>
+            <li>Aplicativos de rápida implementação</li>
+            <li>Rede própria de alta capacidade e controle total de ponta-a-ponta;</li>
+            <li>Representantes locais de vendas e suporte;</li>
+            <li>Melhor custo benefício para um conjunto completo de recursos e serviços;</li>
+          </ul>
+      </div>
+      </div>
+    </section>
+
+    <!--Caixa-azul-2-->
+    <article class="Caixa-azul-2">
+      <p>Plataforma e Soluções</p>
+    </article>
+
+
+    <!--Section-6-->
+    <section class="section-6">
+
+      <div class="circulos">
+        <div class="circulo">
+          <img src="../imagens-projeto/icone-cadeado.png" alt="ìcone Cadeado">
+        </div>
+        <p class="p-pa">2FA</p>
+      </div>
+
+      <div  class="circulos">
+        <div class="circulo">
+          <img src="../imagens-projeto/icone-celular.png" alt="ìcone Celular">
+        </div>
+        <p class="p-pa">Número Máscara</p>
+      </div>
+
+      <div  class="circulos">
+        <div class="circulo">
+          <img src="../imagens-projeto/icone-cheking.png" alt="">
+        </div>
+        <p class="p-pa">Google Verified Calls</p>
+      </div>
+
+      <div  class="circulos">
+        <div class="circulo">
+          <img src="../imagens-projeto/icone-chat.png" alt="ícone SMS">
+        </div>
+        <p class="p-pa">SMS Programável</p>
+      </div>
+    </section>
+    
+       
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    const modeToggle = document.getElementById('modeToggle');
-    const body = document.body;
-    const navbar = document.getElementById('navbar');
-    const logo = document.getElementById('imglogo');
+    $(document).ready(function () {
+      const $body = $('body');
+      const $navbar = $('#navbar');
+      const $logo = $('#imglogo');
+      const $modeToggle = $('#modeToggle');
+      const $fontToggle = $('#fontToggle');
 
-    // Função para aplicar o tema escuro/claro
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        body.classList.remove('bg-light', 'text-dark');
-        body.classList.add('bg-dark', 'text-light');
-        navbar.classList.remove('navbar-light', 'bg-light');
-        navbar.classList.add('navbar-dark', 'bg-dark');
-        modeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
-        logo.src = 'img.03/telecall-logo-white-1.png';
-      } else {
-        body.classList.remove('bg-dark', 'text-light');
-        body.classList.add('bg-light', 'text-dark');
-        navbar.classList.remove('navbar-dark', 'bg-dark');
-        navbar.classList.add('navbar-light', 'bg-light');
-        modeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-        logo.src = 'img.03/logo-hdr-475x110.png';
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          $body.removeClass('bg-light text-dark').addClass('bg-dark text-light');
+          $navbar.removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
+          $modeToggle.html('<i class="bi bi-sun-fill"></i>');
+          $logo.attr('src', 'img.03/telecall-logo-white-1.png');
+        } else {
+          $body.removeClass('bg-dark text-light').addClass('bg-light text-dark');
+          $navbar.removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
+          $modeToggle.html('<i class="bi bi-moon-stars-fill"></i>');
+          $logo.attr('src', 'img.03/logo-hdr-475x110.png');
+        }
+        localStorage.setItem('theme', theme);
       }
-      localStorage.setItem('theme', theme);
-    }
-
-    // Verificar se o modo escuro está armazenado no localStorage
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
+      function applyFontSize(size) {
+        $body.css('font-size', size + 'px');
+        localStorage.setItem('fontSize', size);
+      }
+      function toggleFontSize() {
+        const currentSize = parseInt($body.css('font-size'));
+        let newSize = currentSize === 14 ? 16 : currentSize === 16 ? 18 : 14;
+        applyFontSize(newSize);
+      }
+      const $carouselIndicators = $('#carouselExampleIndicators .carousel-indicators');
+      const $carouselItems = $('#carouselExampleIndicators .carousel-item');
+      $carouselIndicators.empty();
+      $carouselItems.each(function(index) {
+        const isActive = $(this).hasClass('active') ? 'active' : '';
+        const ariaCurrent = $(this).hasClass('active') ? 'aria-current="true"' : '';
+        const button = `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" class="${isActive}" ${ariaCurrent} aria-label="Slide ${index + 1}"></button>`;
+        $carouselIndicators.append(button);
+      });
+      const storedTheme = localStorage.getItem('theme') || 'light';
       applyTheme(storedTheme);
-    } else {
-      applyTheme('light');
-    }
-
-    modeToggle.addEventListener('click', () => {
-      const currentTheme = body.classList.contains('bg-light') ? 'light' : 'dark';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      applyTheme(newTheme);
+      const storedFontSize = parseInt(localStorage.getItem('fontSize')) || 16;
+      applyFontSize(storedFontSize);
+      $modeToggle.on('click', () => {
+        const newTheme = $body.hasClass('bg-light') ? 'dark' : 'light';
+        applyTheme(newTheme);
+      });
+      $fontToggle.on('click', toggleFontSize);
     });
   </script>
 </body>
 </html>
+
+
 
