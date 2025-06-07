@@ -12,31 +12,26 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <style>
-    @media (min-width: 768px) {
-      .dropdown:hover .dropdown-menu {
-        display: block;
-      }
-    }
-    @media (max-width: 767.98px) {
-      .navbar-nav .dropdown-menu {
-        right: 0;
-        left: auto;
-        text-align: right;
-      }
-    }
+
     * {
       font-family: 'Titillium Web', sans-serif;
     }
+
+  /* NAVBAR */
     body, nav, .navbar-nav .nav-link, .dropdown-menu {
       transition: background-color 0.5s ease, color 0.5s ease;
     }
+
     #imglogo {
       transition: all 0.5s ease;
     }
+
     .navbar-nav .nav-item {
       margin-left: 25px;
       margin-right: 25px;
     }
+    
+    /* BOTOES TEMA/FONTE */
     .mode-toggle, .font-toggle {
       margin-right: 15px;
       border: 2px solid transparent;
@@ -45,38 +40,48 @@
       background-color: transparent;
       transition: border-color 0.3s ease;
     }
-    .mode-toggle:hover, .font-toggle:hover {
-      border-color: #ffffff00;
+
+    .mode-toggle i,
+    .font-toggle i {
+      transition: transform 0.3s ease, color 0.3s ease;
+      cursor: pointer; /* Mostrar que é clicável */
     }
+
     .mode-toggle:focus, .font-toggle:focus {
       outline: none;
       box-shadow: 0 0 0 3px transparent;
     }
+
     .dropdown-toggle::after {
       display: none;
     }
+
+    /* COR ESTILO NAV*/
     .navbar-dark .navbar-nav .nav-link {
       color: #f0f0f0;
     }
-    .bg-dark .navbar-dark .navbar-nav .nav-link {
-      color: #f0f0f0;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #ffcc00;
-    }
+
     .navbar-dark {
       background-color: #333333 !important;
     }
     .navbar-light .navbar-nav .nav-link {
-      color: #333;
+      color: #333333; /* cor da fonte */
     }
+
+    body.bg-dark .navbar {
+      background-color: #202120b3 !important; /* cor da nav */
+   }
+
     .nav-link.active {
-      border-bottom: 2px solid #53B2ED;
+      border-bottom: 2px solid #53B2ED; /* "home" */
       font-weight: normal;
     }
+    
     .nav-link:not(.active):hover {
       border-bottom: 2px solid #53B2ED;
     }
+
+    /* BOTOES DE ALTERNAR MODO DARK/LIGHT */
     .bg-dark .bi-sun-fill {
       color: #ffffff;
     }
@@ -87,8 +92,10 @@
       color: #ffffff;
     }
     .bg-light .font-toggle i {
-      color: #333333;
+      color: #545353;
     }
+
+    /* TRIANGULO DPS DE SERVIÇOS */
     .triangle-down {
       display: inline-block;
       width: 0; 
@@ -99,17 +106,18 @@
       border-right: 6px solid transparent;
       border-top: 6px solid #555;
     }
-    .content-left {
-      margin-top: 30px;
-      margin-left: 30px;
-    }
+
+  /* LOGO MODAVO */
     #Modavo-PNG {
       max-width: 300px;
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
+      margin-top: 30px;
     }
+
+  /* H2 PRINCIPAL */
     #h2-principal {
-      position: relative;
+      
       margin-left: 44px;
       margin-top: 9px;
       padding-bottom: 10px;
@@ -117,6 +125,7 @@
       color: #53B2ED;
       font-weight: 600;
     }
+
     #h2-principal::after {
       content: "";
       display: block;
@@ -125,55 +134,28 @@
       border-bottom: 2px solid #53B2ED;
       transform: translateX(-30px);
     }
-    .main-container {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin-top: 50px;
-      margin-left: 30px;
-      margin-right: 30px;
-      gap: 20px;
-    }
+    
+    /* CAROUSEL */
     #carouselExampleIndicators {
-      width: 750px;
-      height: 310px;
-      flex-shrink: 0;
-      margin-left: 180px;
+      margin-top: 30px;
+      width: auto;
+      height: auto;
     }
+
     #carouselExampleIndicators .carousel-inner,
     #carouselExampleIndicators .carousel-item,
     #carouselExampleIndicators img {
       height: 310px;
       object-fit: cover;
     }
-    
-    #Modavo-API {
-      display: block;
-      width: 100%;
-      max-width: 700px;
-      height: auto;
-      margin-top: 30px;
-      margin-left: -5%;
-    }
-
-    .after-carousel {
-      display: flex;
-      flex-direction: row;
-      margin-left: 50px;
-      margin-top: 50px;
-      padding-left: 50px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
+  
+    /* CPAAS OQ É */
     #h3-1 {
       position: relative;
       padding-top: 80px;
-      display: inline-block;
       font-weight: 800;
     }
+
     #h3-1::after {
       content: "";
       display: block;
@@ -183,111 +165,120 @@
       transform: translateX(-30px);
     }
     
+    /* SECTION-1 */
     .section-1 {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: start;
       text-align: left;
-      width: 100%;
-      min-width: 100px;
-      padding-left: 50px;
+      padding-left: 40px;
     }
 
+    /* PARAGRAFOS SECTION-1 */
     #p-h3-1 {
       padding-top: 9px;
       font-weight: 600;
       font-size: large;
       color: #53B2ED;
     }
+
     #p-h3-2 {
       margin-top: -15px;
       font-weight: 600;
       font-size: large;
       font-style: italic;
     }
+
     .p-h3 {
       margin-top: 15px;
-      width: 500px;
       font-size: larger;
       font-weight: 500;
-      line-height: 1.5;
-      white-space: normal;
+      line-height: 2;
     }
 
+  /* CAIXA-AZUL */
     .caixa-azul { 
-      position: relative;
       justify-items: center;
       background-color: #53B2ED;
       color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* sombra suave */
       padding: 25px;
       margin: 30px auto;
-      font-size: large;
-      max-width: 1000px;
+      font-size: larger;
+      max-width: 80%;
       width: 100%;
       text-align: center;
     }
 
-    #h3-1::after {
-      content: "";
-      display: block;
-      margin-top: 6.5px;
-      width: 50%;
-      border-bottom: 2px solid #53B2ED;
-      transform: translateX(-30px);
-    }
-    .h3-2::after {
-      width: 25%!important;
-      transform: translateX(-30px)!important;
-    }
 
+    /* SECTION-2 */
     .section-2 {
+      flex: 1;
       display: flex;
-      align-items: flex-start;
-      gap: 20px; /* espaço entre o texto e a imagem */
+      flex-direction: column;
+      align-items: start;
+      text-align: left;
+      padding-left: 40px;
     }
-
-    .img-section2 {
-      display: flex;
-      max-width: 560px;
-      height: auto;
-      margin-left: 160px !important;
-    }
-
-    .h3-3::after {
-      width: 115%!important;
+  
+    /* CPAAS DIGITAL */
+    .h3-2::after {
+      width: 20% !important;
       transform: translateX(-30px)!important;
       margin-bottom: 40px;
+      margin-left: 3px;
     }
 
 
-    /*ícones */
-
-    .icones {
-      display: flex;
-      justify-content: center;
-      gap: 20px; /* Espaço entre as imagens */
-      align-items: flex-start;
-      flex-wrap: wrap; /* Caso não caiba, quebra para a próxima linha */
-      margin-left: -190px;
+  /* SECTION-3 */
+    /* USOS */
+    .h3-3::after {
+      width: 10% !important;
+      transform: translateX(-10px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px;
     }
 
-    .item {
-      text-align: center;
-      width: 180px;
-      margin-left: 155px;
+    /* Estilo para desktop (≥ 992px) */
+   @media (min-width: 992px) {
+   .h3-3::after {
+      width: 7.5% !important;
+      transform: translateX(-55px) !important;
+      margin-left: 3px;
+  }
+}
+
+    /* tam das img */
+    .section-3 img {
+      max-width: 70%;
     }
 
-    .item img {
-      margin: 25px;
-      width: 100%;
-      height: auto;
-      padding-bottom: 10px;
-      align-items: center;
+    /* Aplica 50% no mobile */
+  @media (max-width: 767.98px) {
+    .section-3 img {
+      max-width: 40%;
+  }
+}
+    /* li SECTION-3*/
+    .li-icone {
+      list-style-type: none;
+      font-size: larger;
+      font-weight: 500;
+      justify-content: space-between;
+      line-height: 2.5;
     }
 
-    /* hover ícones */
+    /* /p azuis */
+    .p-item { 
+      font-size: 30px;
+      font-weight: 600;
+      color: #53B2ED;
+    }
+
+    /* HOVER>>> */
+
+    /* hover img>>> */
     .icones img {
       transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
     }
@@ -297,16 +288,7 @@
       opacity: 0.8; /* dá um leve efeito de transparência */
     }
 
-    .p-item { 
-      font-size: larger;
-      font-weight: 600;
-      color: #53B2ED;
-      font-size: 30px;
-      padding-top: 10px;
-      margin-left: 40px;
-    }
-
-    /* hover tópicos em azul */
+    /* hover /p em azul>>> */
     .p-item {
       transition: color 0.3s ease, transform 0.3s ease;
     }
@@ -316,512 +298,472 @@
       transform: translateY(-3px); /* sobe um pouco */
     }
 
-    .li-icone {
-      list-style-type: none;
-      margin-right: 60px;
-      width: 100%;
-      gap: 10px;
-      font-size: larger;
-      font-weight: 500;
-      white-space: normal;
-      align-items: center;
-      text-align: center;
-      justify-content: space-between;
-    
-    }
 
-    .h3-4::after {
-      width: 60% !important;
-      transform: translateX(-30px)!important;
-      margin-bottom: 10px;
-    }
-
-
-    #img-q {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding-top: 5px; /*espaço entre os blocos */
-      padding-bottom: 15px; 
-    }
-
-    .ex img {
-      max-width: 30%;
-      height: auto;
+   /* SECTION-4 */
+    /* tam e borda */
+    .ex {
+      max-width: 95%;
       border: 1px solid #53B2ED; /* Define a borda azul com 2px de espessura */
       border-radius: 4px;     /* Opcional: bordas levemente arredondadas */
-      padding: 0px;
     }
 
-    /*section-5*/
+    /* exemplos */
+    .h3-4::after {
+      width: 13% !important;
+      transform: translateX(-11px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px;
+    }
 
+    /* Estilo para desktop (≥ 992px) */
+   @media (min-width: 992px) {
+   .h3-4::after {
+      width: 7.5% !important;
+      transform: translateX(-55px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px;
+  }
+}
+
+  /* SECTION-5 */
+    /* vantagens */
     .h3-5::after {
-      width: 50%!important;
+      width: 20%!important;
       transform: translateX(-35px)!important;
       margin-bottom: 30px;
+      margin-left: 3px;
     }
 
-    .vantagens {
-      margin-left: 60px;
-      list-style-type: none;
-      padding-top: 20px;
-      display: flex;
-      flex-direction: row;
-      gap: 100px;
-    }
+     /* Estilo para desktop (≥ 992px) */
+   @media (min-width: 992px) {
+   .h3-5::after {
+      width: 9% !important;
+      transform: translateX(-55px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px !important;
+  }
+}
 
-    .vantagens .li-azul  {
+     /* li/lu */
+    .li-azul  {
       list-style: none;
-      font-size: 25px;
+      font-size: 30px;
       font-weight: 600;
       color: #53B2ED;
+      line-height: 2.5;
     }
 
-    .vantagens .li-normal  {
+    .li-normal  {
+      margin-top: 10px;
       list-style: none;
       font-size: 25px;
       font-weight: 500;
     }
 
-    .vantagens li {
-      margin-bottom: 30px;  /* Ajuste o valor conforme quiser */
-    }
 
-    .vantagens .li-normal  {
-      list-style: none;
-    }
-
-     /*Caixa-azul-2*/
-
+     /* CAIXA-AZUL-2 */
     .Caixa-azul-2 {
-      display: block;
-      flex-direction: column !important;
-      position: relative;
-      
       justify-items: center;
       background-color: #53B2ED;
       color: white;
       font-weight: 700;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* sombra suave */
-      
       padding: 40px;
-      margin: 80px auto;
-      font-size: 40px;
+      margin: 90px auto;
       max-width: 650px;
       max-height: 900px;
       width: 100%;
       text-align: center;
-      gap: 30px;
+    }
     
+    .Caixa-azul-2 p {
+      font-size: 2.5rem;
+      font-weight: bold;
     }
 
+
+
+
+
+    /* ÍCONES AZUIS */
     .section-6 {
-     display: flex; /* Alinha os círculos em linha */
-     flex-direction: row;
-     gap: 80px; /* Espaço entre os círculos */
-     margin: 95px; /* Margem ao redor do container */
-     margin-top: 150px;
+     align-items: center;
+     margin-top: 180px;
+     
    }
 
    .circulo {
-     width: 200px; /* Largura do círculo */
-     height: 200px; /* Altura do círculo */
+     width: 170px; /* Largura do círculo */
+     gap: 20px;
+     height: 170px; /* Altura do círculo */
      background-color: #53B2ED; /* Cor azul */
      border-radius: 50%; /* Deixa o formato redondo */
-    }
+     transition: transform 0.3s ease;
+     margin: 0 auto 0.25rem;
+   }
 
-    @media (max-width: 767px) {
-      .main-container {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 10px;
-        margin-top: 40px;
-      }
-      #carouselExampleIndicators {
-        margin-left: 10px !important;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
-      .content-left {
-        margin-left: 0;
-        margin-top: 0;
-        text-align: left;
-      }
-      #Modavo-PNG {
-        max-width: 260px;
-        margin: 0 0 10px 0;
-        margin-top: 35px;
-      }
-      #h2-principal {
-        margin-left: 35px;
-      }
-      #h2-principal::after {
-        transform: translateX(-10px);
-      }
-      
-      #Modavo-API {
-        width: 100%;
-        max-width: 800px;
-        margin-left: -50px !important;
-        height: auto;
-      } 
-
-      .section-1 {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: -80px;
-        margin-top: -10px;
-      }
-
-      .p-h3 {
-      margin-top: 15px;
-      width: 400px;
-      font-size: larger;
-      font-weight: 500;
-      line-height: 1.5;
-      white-space: normal;
-    }
-
-    .caixa-azul {
-      align-items: flex-start;
-      justify-items: center;
-      text-align: center;
-      margin-left: auto;
-      font-size: large;
-      margin-right: 75px;
-      height: 90%;
-      width: 90%;
-    }
-
-    .section-2 {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: -30px;
-        padding-left: -95px;
-        
-      }
-
-    #Cpaas-API {
-        width: 100%;
-        max-width: 600px;
-        margin-left: -25px !important;
-        height: auto;
-    } 
-
-  
-  .icones {
-    grid-template-columns: 1fr;
-    max-width: 40%;
-    margin-left: 45px;
-    gap: 15px;
-    justify-content: center;
-  }
-
-  .item {
+   .circulo img {
     width: 100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .item img {
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-
-  .li-icone {
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-    padding-right: 0;
-    font-size: 18px;
+    height: 100%;
+    display: flex; /* centraliza a imagem */
     align-items: center;
+    justify-content: center;
+    overflow: hidden; /* evita que a imagem ultrapasse o círculo */
+   }
+
+   @media (max-width: 767.98px) {
+  .circulo {
+    width: 125px;
+    height: 125px;
   }
+  
+}
+   .circulo:hover {
+     transform: scale(1.1);
+     background-color: #2980b9;
+   }
 
-  .p-item {
-    font-size: 40px;
-    padding-left: 25px;
-    margin-left: 15px;
-    margin-bottom: 8px;
-    text-align: center;
-  }
-
-  #p-v-s {
-    margin-left: 0px ;
-  }
-
-  #cc {
-   vertical-align: baseline;
-  }
-
-
-    .ex {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; 
-    }
-
-    .ex img {
-    width: 90vw; /* ou ajuste como quiser */
-    max-width: 300px;
-    align-items: center;
-  }
-
-  #img-B {
-    order: -1;
-  }
-
+  .p-pa {
+    margin-top: 35px;
+    font-weight: 600;
+    font-size: 20px;
   }
   </style>
 </head>
+
 <body class="bg-light text-dark">
 
+<!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand ms-5" href="#">
-        <img id="imglogo" src="img.03/logo-clara.png" alt="Logo" width="155" height="35.5">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Cadastre-se</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-              Serviços <span class="triangle-down"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">2FA</a></li>
-              <li><a class="dropdown-item" href="#">Número Máscara</a></li>
-              <li><a class="dropdown-item" href="#">Google Verified Calls</a></li>
-              <li><a class="dropdown-item" href="#">SMS Programável</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo">
-              <i class="bi bi-moon-stars-fill"></i>
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="font-toggle" id="fontToggle" aria-label="Ajustar tamanho da fonte">
-              <i class="bi bi-fonts fs-5"></i>
-            </button>
-          </li>
-        </ul>
+  <div class="container-fluid">
+    <a class="navbar-brand ms-5">
+      <img id="imglogo" src="img.03/logo-clara.png" alt="Logo" width="155" height="35.5">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Cadastre-se</a></li>
+        <li class="nav-item"><a class="nav-link" href="../tela2/indexT2-login.html">Login</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Serviços <span class="triangle-down"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">2FA</a></li>
+            <li><a class="dropdown-item" href="#">Número Máscara</a></li>
+            <li><a class="dropdown-item" href="#">Google Verified Calls</a></li>
+            <li><a class="dropdown-item" href="#">SMS Programável</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="font-toggle" id="fontToggle" aria-label="Ajustar tamanho da fonte">
+            <i class="bi bi-fonts fs-5"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- DEPOIS DO NAVBAR -->
+  <div class="container py-4">
+  <div class="row align-items-center">
+    
+    <!-- COLUNA ESQUERDA -->
+    <div class="col-12 col-md-4 mb-4 mb-md-0">
+      <div  class="d-flex flex-column align-items-start">
+        <img src="img.03/Modavo-PNG.png" id="Modavo-PNG" alt="Imagem canto superior" class="img-fluid mb-3">
+        <h2 id="h2-principal">CPaaS PLATFORM</h2>
       </div>
     </div>
-  </nav>
 
-  <div class="main-container">
-    <div class="content-left">
-      <img src="img.03/Modavo-PNG.png" id="Modavo-PNG" alt="Imagem canto superior">
-      <h2 id="h2-principal">CPaaS PLATFORM</h2>
-    </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators"></div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img.03/exemplo-01.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+    <!-- COLUNA DIREITA: CAROUSEL -->
+    <div class="col-12 col-md-8">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators"></div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img.03/exemplo-01.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          </div>
+          <div class="carousel-item">
+            <img src="../imagens-projeto/carosel-2FA.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          </div>
+          <div class="carousel-item">
+            <img src="../imagens-projeto/carosel-mascara.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          </div>
+          <div class="carousel-item">
+            <img src="../imagens-projeto/carosel-google.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          </div>
+          <div class="carousel-item">
+            <img src="../imagens-projeto/carosel-SMS.png" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
+          </div>
         </div>
-        <div class="carousel-item">
-          <img src="https://picsum.photos/id/1017/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
-        </div>
-        <div class="carousel-item">
-          <img src="https://picsum.photos/id/1018/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
-        </div>
-        <div class="carousel-item">
-          <img src="https://picsum.photos/id/1019/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
-        </div>
-        <div class="carousel-item">
-          <img src="https://picsum.photos/id/1020/600/400" class="d-block w-100" alt="Exemplo de Comunicação via CPaaS">
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-      </button>
+    </div>
+
+  </div>
+</div>
+
+  <!-- DEPOIS DO CAROUSEL -->
+  <div class="container my-5">
+    <div  class="row align-items-center">
+
+      <!-- MODAVO API -->
+      <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+        <img src="img.03/Modavo-01-gt.png" alt="Modavo API" id="Modavo-API" class="img-fluid w-100">
+      </div>
+
+        <!-- SECTION-1 -->
+        <section class="section-1 col-12 col-md-5">
+          <h3 class="mt-3 mt-md-0" id="h3-1">CPaaS: O que é?</h3>
+          <p id="p-h3-1">Communications Platform as a Service</p>
+          <p id="p-h3-2">Plataforma de Comunicação como Serviço</p>
+          <p class="p-h3">
+            É uma solução de software de comunicação que atua
+            como uma base sobre a qual desenvolvedores podem
+            integrar uma variedade de aplicativos.
+          </p>
+          <p class="p-h3">
+            Métodos de comunicação típicos, como voz, chamadas
+            de vídeo ou mensagens de texto SMS, podem ser
+            incorporados em outros sistemas por meio de APIs que
+            se conectam à plataforma CPaaS.
+          </p>
+        </section>
     </div>
   </div>
 
-  <div class="after-carousel">
-    <img src="img.03/Modavo-01-gt.png" alt="Modavo API" id="Modavo-API" class="me-3">
+    <!-- CAIXA AZUL -->
+    <div class="container my-5">
+      <article class="caixa-azul">
+        <p class="fs-6 fs-md-5 fs-lg-4">O CPaaS, com sua <strong>escalabilidade, flexibilidade, autenticação</strong> e segurança aprimoradas, está  <strong>revolucionando</strong> o modo como
+          as empresas habilitadas em nuvem implementam <strong>comunicações de voz, SMS e vídeo.</strong></p>
+      </article>
+    </div>
 
-    <!--Section-1-->
-    <section class="section-1">
-      <h3 class="mt-3 mt-md-0" id="h3-1">CPaaS: O que é?</h3>
-      <p id="p-h3-1">Communications Platform as a Service</p>
-      <p id="p-h3-2">Plataforma de Comunicação como Serviço</p>
-      <p class="p-h3">
-        É uma solução de software de comunicação que atua
-        como uma base sobre a qual desenvolvedores podem
-        integrar uma variedade de aplicativos.
-      </p>
-      <p class="p-h3">
-        Métodos de comunicação típicos, como voz, chamadas
-        de vídeo ou mensagens de texto SMS, podem ser
-        incorporados em outros sistemas por meio de APIs que
-        se conectam à plataforma CPaaS.
-      </p>
-    </section>
-
-    <!--Caixa-azul-->
-    <article class="caixa-azul">
-      <p>O CPaaS, com sua <strong>escalabilidade, flexibilidade, autenticação</strong> e segurança aprimoradas, está  <strong>revolucionando</strong> o modo como
-        as empresas habilitadas em nuvem implementam <strong>comunicações de voz, SMS e vídeo.</strong></p>
-    </article>
-
-    <!--Section-2-->
-    <section class="section-2 d-flex align-items-start">
+    <!--SECTION-2-->
+    <section class="section-2 d-flex flex-column flex-md-row align-items-start">
       <div>
         <h3 id="h3-1" class="h3-2">CPaaS e a Transformação Digital</h3>
-        <p class="p-h3">Expectativa de crescimento estimado de
-         <strong>$ 8,2 bilhões</strong> em 2021
+        <p class="p-h3 fs-md-1">Expectativa de crescimento estimado de
+         <strong>$ 8,2 bilhões</strong> em 2021.
          <strong>85%</strong> dos profissionais se conectam de
          maneira diferente com colegas e clientes do que
          faziam há apenas 5 anos.
          As receitas de CPaaS estão crescendo mais de
          <strong>40%</strong> ao ano.</p>
-        <p class="p-h3"><strong>CPaaS</strong> já ultrapassou o mercado de <strong>UCaaS</strong>
+        <p class="p-h3 fs-md-1"><strong>CPaaS</strong> já ultrapassou o mercado de <strong>UCaaS</strong>
          (Unified Communication as a Service).
          Marcas que estão em <strong>múltiplos canais</strong>
          melhoram a experiência do usuário e aumentam
          seus resultados.</p>
       </div>
-      <img src="../imagens-projeto/cpaas-api-t.png" alt="Exemplo CPaaS" class="img-section2 ms-4" id="Cpaas-API">
+
+      <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+       <img src="../imagens-projeto/cpaas-api-t.png" alt="Ilustração da API do CPaaS com interface gráfica" class="img-fluid mt-3 mt-md-0 mx-auto d-block w-100" id="Cpaas-API">
+      </div>
     </section>
 
-    <!--Section-3-->
-    <section class="section-3">
-      <div>
+
+  <!-- SECTION-3 -->
+<section class="section-3 py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12">
         <h3 id="h3-1" class="h3-3">Usos</h3>
       </div>
 
-      <div class="icones">
-
-        <div class="item">
-          <figure>
-            <img src="../imagens-projeto/icones/caixa-api.png" alt="Ìcone de Caixa" class="img-caixa-API ms-4">
+    <div class="row">
+      <!-- Item 1: Logística -->
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="text-center d-flex flex-column align-items-center">
+          <figure class="icones">
+            <img src="../imagens-projeto/icones/caixa-api.png" alt="Ícone de Caixa" class="img-fluid img-custom mb-2">
           </figure>
-          <p class="p-item" id="p-v-s">Logistíca</p>
-
-          <ul class="li-icone">
-              <li>Acesso seguro com 2FA.</li>
-              <li>Uso de números mascarados para proteção de funcionário e cliente.</li>
-              <li>Mantenha o cliente informado sobre entrega e serviços.</li>
-              <li>Verified calling para confirmação de entregas.</li>
+          <p class="p-item text-center mb-4">Logística</p>
+          
+          <ul class="li-icone text-center">
+            <li>Acesso seguro com 2FA.</li>
+            <li>Números mascarados para proteção.</li>
+            <li>Informações sobre entrega.</li>
+            <li>Verified Calling para confirmação.</li>
           </ul>
         </div>
+      </div>
 
-        <div class="item">
-          <figure>
-            <img src="../imagens-projeto/icones/varejo-api.png" alt="Ìcone de varejo online" class="img-varejo-API ms-4" id="icone-API">
+      <!-- Item 2: Varejo -->
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="text-center d-flex flex-column align-items-center">
+          <figure class="icones">
+            <img src="../imagens-projeto/icones/varejo-api.png" alt="Ícone de varejo online" class="img-fluid img-custom mb-2">
           </figure>
-          <p class="p-item">Varejo</p>
-
+          <p class="p-item fw-semibold">Varejo</p>
           <ul class="li-icone">
             <li>Compra segura com 2FA.</li>
-            <li>Avisos sobre compras e entregas.</li>
-            <li>Upsell com novas ofertas e vantagens via SMS ou Verified Calling.</li>
+            <li>Avisos sobre compras.</li>
+            <li>Upsell via SMS ou ligação.</li>
           </ul>
         </div>
+      </div>
 
-        <div class="item">
-          <figure>
-            <img src="../imagens-projeto/icones/call-api.png" alt="Ìcone de Call Center">
+      <!-- Item 3: Call Center -->
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="text-center d-flex flex-column align-items-center">
+          <figure class="icones">
+            <img src="../imagens-projeto/icones/call-api.png" alt="Ícone de Call Center" class="img-fluid img-custom mb-2">
           </figure>
-          <p class="p-item" id="cc">Call center</p>
-
+          <p class="p-item fw-semibold">Call Center</p>
           <ul class="li-icone">
-            <li>Melhore taxas de abertura utilizando alertas SMS para confirmações.</li>
-            <li>Economia de números com o uso de um único número máscara por todos os agentes.</li>
-            <li>Verified Calling para confirmação de agendamentos.</li>
+            <li>Confirmações por SMS.</li>
+            <li>Uso de número máscara único.</li>
+            <li>Verified Calling para agendamentos.</li>
           </ul>
         </div>
+      </div>
 
-        <div class="item">
-          <figure>
-            <img src="../imagens-projeto/icones/saude-api.png" alt="Ìcone de saúde">
+      <!-- Item 4: Saúde -->
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="text-center d-flex flex-column align-items-center">
+          <figure class="icones">
+            <img src="../imagens-projeto/icones/saude-api.png" alt="Ícone de saúde" class="img-fluid img-custom mb-2">
           </figure>
-          <p class="p-item">Saúde</p>
-
+          <p class="p-item fw-semibold">Saúde</p>
           <ul class="li-icone">
             <li>Acesso seguro com 2FA.</li>
-            <li>Melhore o agendamento e reduza faltas com lembretes por SMS.</li>
-            <li>Tokens de autorização para procedimentos com 2FA.</li>
-            <li>Verified Calling para avisos de resultados e agendamentos.</li>
+            <li>Lembretes por SMS.</li>
+            <li>Tokens para procedimentos.</li>
+            <li>Resultados via chamada.</li>
           </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!--Section-4-->
-    <section class="section-4">
-      <div>
-        <h3 id="h3-1" class="h3-4">Exemplos</h3>
+<!-- SECTION-4 -->
+<section class="section-4 py-5">
+  <div class="container">
+    <div>
+      <h3 id="h3-1" class="h3-4">Exemplos</h3>
+    </div>
+
+    <div class="row justify-content-center mb-3 gx-0">
+      <div class="col-6 col-sm-2 col-md-4">
+        <img src="../imagens-projeto/q1-a.png" alt="Gráfico de exemplo A" class="ex img-fluid rounded">
       </div>
-
-      <div class="ex d-flex align-items-start" id="img-q">
-        <img src="../imagens-projeto/q1-a.png" alt="Gráfico de exemplo A"> 
-        <img src="../imagens-projeto/q2-b.png" alt="Gráfico de exemplo B" id="img-B">
+      <div class="col-6 col-sm-2 col-md-4">
+        <img src="../imagens-projeto/q2-b.png" alt="Gráfico de exemplo B" class="ex img-fluid rounded">
       </div>
+    </div>
 
-      <div class="ex d-flex align-items-start" id="img-q">
-        <img src="../imagens-projeto/q3-b.png" alt="Gráfico de exemplo C">
-        <img src="../imagens-projeto/q4-a.png" alt="Gráfico de exemplo D">
+    <div class="row justify-content-center mr-0 gx-0">
+      <div class="col-6 col-sm-2 col-md-4">
+        <img src="../imagens-projeto/q3-b.png" alt="Gráfico de exemplo C" class="ex img-fluid rounded">
       </div>
-    </section>
-
-    <!--Section-5-->
-    <section class="section-5">
-      <div>
-        <h3 id="h3-1" class="h3-5">Vantagens Telecall</h3>
+      <div class="col-6 col-sm-2 col-md-4">
+        <img src="../imagens-projeto/q4-a.png" alt="Gráfico de exemplo D" class="ex img-fluid rounded">
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="vantagens">
-      <div>
-          <ul class="li-azul">
-            <li>Confiança</li>
-            <li>Agilidade</li>
-            <li>Garantia de Rede</li>
-            <li>Suporte ao Cliente</li>
-            <li>Preço</li>
-          </ul>
+<!-- SECTION-5 -->
+<section class="section-5 py-5">
+  <div class="container">
+    <h3 id="h3-1" class="h3-5">Vantagens Telecall</h3>
+
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="li-azul list-unstyled">
+          <li>Confiança</li>
+          <li>Agilidade</li>
+          <li>Garantia de Rede</li>
+          <li>Suporte ao Cliente</li>
+          <li>Preço</li>
+        </ul>
       </div>
-      <div>
-          <ul class="li-normal">
-            <li>Empresa que já conhecem e confiam;</li>
-            <li>Aplicativos de rápida implementação</li>
-            <li>Rede própria de alta capacidade e controle total de ponta-a-ponta;</li>
-            <li>Representantes locais de vendas e suporte;</li>
-            <li>Melhor custo benefício para um conjunto completo de recursos e serviços;</li>
-          </ul>
+      <div class="col-md-8">
+        <ul class="li-normal list-unstyled">
+          <li>Empresa que já conhecem e confiam;</li><br>
+          <li>Aplicativos de rápida implementação</li><br>
+          <li>Rede própria de alta capacidade e controle total de ponta-a-ponta;</li><br>
+          <li>Representantes locais de vendas e suporte;</li><br>
+          <li>Melhor custo benefício para um conjunto completo de recursos e serviços;</li><br>
+        </ul>
       </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!--Caixa-azul-2-->
-    <article class="Caixa-azul-2">
-      <p>Plataforma e Soluções</p>
-    </article>
+ <!--CAIXA-AZUL-2-->
+    <div class="container my-5">
+      <article class="Caixa-azul-2">
+        <p>Plataforma e Soluções</p>
+      </article>
+    </div>
 
-
-    <!--Section-6-->
-    <section class="section-6">
-      <div class="circulo"></div>
-      <div class="circulo"></div>
-      <div class="circulo"></div>
-      <div class="circulo"></div>
-    </section>
+<!-- SECTION-6 -->
+<section class="section-6 container mb-5">
+  <div class="row text-center justify-content-center g-0">
     
-       
+    <div class="col-6 col-md-3">
+      <a href="https://www.telecall.com/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+        <div class="circulo mx-auto mb-2">
+          <img src="../imagens-projeto/icone-cadeado.png" alt="Ícone Cadeado" class="img-fluid">
+        </div>
+        <p class="p-pa">2FA</p>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+        <div class="circulo mx-auto mb-2">
+          <img src="../imagens-projeto/icone-celular.png" alt="Ícone Celular" class="img-fluid">
+        </div>
+        <p class="p-pa">Número Máscara</p>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+        <div class="circulo mn-auto mb-2">
+          <img src="../imagens-projeto/icone-cheking.png" alt="Ícone Verificação" class="img-fluid">
+        </div>
+        <p class="p-pa">Google Verified Calls</p>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+        <div class="circulo mn-auto mb-2">
+          <img src="../imagens-projeto/icone-chat.png" alt="Ícone SMS" class="img-fluid">
+        </div>
+        <p class="p-pa">SMS Programável</p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -878,7 +820,6 @@
   </script>
 </body>
 </html>
-
 
 
 
