@@ -68,42 +68,51 @@
       }
 
       $form.on('submit', function (e) {
-        e.preventDefault();
+  e.preventDefault();
 
-        $login.removeClass('is-invalid');
-        $senha.removeClass('is-invalid');
-        $emailFeedback.text('');
-        $senhaFeedback.text('');
+  $login.removeClass('is-invalid');
+  $senha.removeClass('is-invalid');
+  $emailFeedback.text('');
+  $senhaFeedback.text('');
 
-        let valido = true;
-        const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($login.val());
-        const senhaValida = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test($senha.val());
+  let valido = true;
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($login.val());
+  const senhaValida = /^[A-Za-z]{8,}$/.test($senha.val());
 
-        if (!emailValido) {
-          $login.addClass('is-invalid');
-          $emailFeedback.text('Formato de e-mail inválido.');
-          valido = false;
-        }
+  if (!emailValido) {
+    $login.addClass('is-invalid');
+    $emailFeedback.text('Formato de e-mail inválido.');
+    valido = false;
+  }
 
-        if (!senhaValida) {
-          $senha.addClass('is-invalid');
-          $senhaFeedback.text('A senha deve ter no mínimo 6 caracteres, incluindo uma letra maiúscula, um número e um caractere especial.');
-          valido = false;
-        }
+  if (!senhaValida) {
+    $senha.addClass('is-invalid');
+    $senhaFeedback.text('A senha deve ter no mínimo 8 caracteres alfabéticos (sem números ou símbolos).');
+    valido = false;
+  }
 
-        if ($('#flexCheckDefault').is(':checked') && emailValido) {
-          localStorage.setItem('rememberedEmail', $login.val());
-        } else {
-          localStorage.removeItem('rememberedEmail');
-        }
+  if ($('#flexCheckDefault').is(':checked') && emailValido) {
+    localStorage.setItem('rememberedEmail', $login.val());
+  } else {
+    localStorage.removeItem('rememberedEmail');
+  }
 
-        if (valido) {
-          toastSucesso.show();
-          setTimeout(() => {
-            window.location.href = '../tela3/indexT302.html'; //link para a página principal
-          }, 1500);
-        } else {
-          toastErro.show();
+  if (valido) {
+    // Recupera os dados salvos
+    const usuarioSalvo = localStorage.getItem("usuario");
+    const senhaSalva = localStorage.getItem("senha");
+
+    // Verifica se o que foi digitado bate com o que está salvo
+    if ($login.val() === usuarioSalvo && $senha.val() === senhaSalva) {
+      toastSucesso.show();
+      setTimeout(() => {
+        window.location.href = '../tela3/indexT302.html'; // redireciona
+      }, 1500);
+    } else {
+      toastErro.show();
+    }
+  } else {
+    toastErro.show();
         }
       });
     });

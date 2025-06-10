@@ -346,6 +346,7 @@
 
      /* li/lu */
     .li-azul  {
+      margin-left: 10px;
       list-style: none;
       font-size: 30px;
       font-weight: 600;
@@ -354,6 +355,7 @@
     }
 
     .li-normal  {
+      margin-left: 10px;
       margin-top: 10px;
       list-style: none;
       font-size: 25px;
@@ -382,13 +384,10 @@
     }
 
 
-
-
-
     /* ÍCONES AZUIS */
     .section-6 {
      align-items: center;
-     margin-top: 180px;
+     margin-top: 190px;
      
    }
 
@@ -416,8 +415,8 @@
     width: 125px;
     height: 125px;
   }
-  
 }
+  
    .circulo:hover {
      transform: scale(1.1);
      background-color: #2980b9;
@@ -427,7 +426,56 @@
     margin-top: 35px;
     font-weight: 600;
     font-size: 20px;
+    color: var(--bs-body-color); /* Usa a cor do tema (claro ou escuro) */
+  
   }
+
+  body.text-light .p-pa {
+   color: #fff !important;
+ }
+
+/* SECTION-7 */
+.section-7 img {
+  margin-top: 150px;
+  margin-bottom: 200px; 
+}
+
+/* FOOTER */
+/* FOOTER DARK THEME */
+#footer.dark-theme {
+  background-color: #0b0c0e;
+  color: #f8f9fa;
+}
+
+#footer.dark-theme a {
+  color: #f8f9fa;
+}
+
+#footer.dark-theme a:hover {
+  color: #adb5bd;
+}
+
+/* FOOTER LIGHT THEME */
+#footer.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+#footer.light-theme a {
+  color: #212529;
+}
+
+#footer.light-theme a:hover {
+  color: #000;
+}
+
+/* footer logo */
+#footer-logo {
+  max-height: 80px;
+  margin-bottom: 20px;
+  }
+
+
   </style>
 </head>
 
@@ -481,7 +529,7 @@
     <!-- COLUNA ESQUERDA -->
     <div class="col-12 col-md-4 mb-4 mb-md-0">
       <div  class="d-flex flex-column align-items-start">
-        <img src="img.03/Modavo-PNG.png" id="Modavo-PNG" alt="Imagem canto superior" class="img-fluid mb-3">
+        <img src="img.03/Modavo-PNG.png" id="Modavo-PNG" alt="Imagem canto superior" class="img-fluid mb-3 modavo-png">
         <h2 id="h2-principal">CPaaS PLATFORM</h2>
       </div>
     </div>
@@ -527,7 +575,7 @@
 
       <!-- MODAVO API -->
       <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
-        <img src="img.03/Modavo-01-gt.png" alt="Modavo API" id="Modavo-API" class="img-fluid w-100">
+        <img src="img.03/Modavo-01-gt.png" alt="Modavo API" id="Modavo-API" class="img-fluid w-100 modavo-api">
       </div>
 
         <!-- SECTION-1 -->
@@ -582,7 +630,7 @@
     </section>
 
 
-  <!-- SECTION-3 -->
+<!-- SECTION-3 -->
 <section class="section-3 py-5">
   <div class="container">
     <div class="row mb-4">
@@ -724,7 +772,7 @@
   <div class="row text-center justify-content-center g-0">
     
     <div class="col-6 col-md-3">
-      <a href="https://www.telecall.com/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+      <a href="https://www.telecall.com/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
         <div class="circulo mx-auto mb-2">
           <img src="../imagens-projeto/icone-cadeado.png" alt="Ícone Cadeado" class="img-fluid">
         </div>
@@ -733,7 +781,7 @@
     </div>
 
     <div class="col-6 col-md-3">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
         <div class="circulo mx-auto mb-2">
           <img src="../imagens-projeto/icone-celular.png" alt="Ícone Celular" class="img-fluid">
         </div>
@@ -742,7 +790,7 @@
     </div>
 
     <div class="col-6 col-md-3">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
         <div class="circulo mn-auto mb-2">
           <img src="../imagens-projeto/icone-cheking.png" alt="Ícone Verificação" class="img-fluid">
         </div>
@@ -751,16 +799,108 @@
     </div>
 
     <div class="col-6 col-md-3">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
         <div class="circulo mn-auto mb-2">
           <img src="../imagens-projeto/icone-chat.png" alt="Ícone SMS" class="img-fluid">
         </div>
         <p class="p-pa">SMS Programável</p>
       </a>
     </div>
-
   </div>
 </section>
+
+<!-- SECTION-7 -->
+<section class="container py-5 section-7">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <figure class="text-center">
+        <img src="../imagens-projeto/modavo-platform.png" alt="Modavo Platform" class="img-fluid rounded">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="footer" class="footer pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+
+      <!-- Nova Imagem no topo à esquerda -->
+    <div class="row mb-3">
+      <div class="col-12 col-md-4">
+        <img src="../imagens-projeto/logo-hdr-475x110.png" alt="Imagem adicional" id="footer-logo" class="img-fluid" style="max-width: 150px;">
+      </div>
+    </div>
+
+      <!-- Coluna 1 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Institucional</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/#depoimentos" class="text-secondary text-decoration-none">Depoimentos</a></li>
+          <li><a href="https://expert.cloud.brasil.adp.com/rhweb88/curricweb_principal.r?excid,0610c321660c-b38d-33a9-db14-9b2818568f18" class="text-secondary text-decoration-none">Carreiras</a></li>
+          <li><a href="https://www.telecall.com/contato/" class="text-secondary text-decoration-none">Contato</a></li>
+          <li><a href="https://www.telecall.com/vendas/" class="text-secondary text-decoration-none">Vendas</a></li>
+          <li><a href="https://www.telecall.com/faq/" class="text-secondary text-decoration-none">FAQ</a></li>
+          <li><a href="https://www.telecall.com/politica-e-privacidade/" class="text-secondary text-decoration-none">Política e Privacidade</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Internet</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-secondary text-decoration-none">Internet Dedicada</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Banda Larga</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Wi-Fi</a></li>
+        </ul>
+        <h5 class="mt-3">Outras Soluções</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/outsourcing-de-hardware/" class="text-secondary text-decoration-none">Outsourcing de Hardware</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Telefone</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/internet-dedicada/" class="text-secondary text-decoration-none">PABX IP Virtual</a></li>
+          <li><a href="https://www.telecall.com/banda-larga/" class="text-secondary text-decoration-none">E1</a></li>
+          <li><a href="https://www.telecall.com/wi-fi-e-hotspot/" class="text-secondary text-decoration-none">Números 0800 e 40XX</a></li>
+        </ul>
+        <h5 class="mt-3">Mobilidade</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/contato/" class="text-secondary text-decoration-none">Celular Empresarial</a></li>
+          <li><a href="https://www.telecall.com/mvna-e-2/" class="text-secondary text-decoration-none">MVNA</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Rede e Infraestrutura</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/ponto-a-ponto/" class="text-secondary text-decoration-none">Ponto-a-Ponto</a></li>
+          <li><a href="https://www.telecall.com/mpls/" class="text-secondary text-decoration-none">MPLS</a></li>
+          <li><a href="https://www.telecall.com/fibra-apagada-e-dutos/" class="text-secondary text-decoration-none">Fibra Apagada e Dutos</a></li>
+        </ul>
+
+        <!-- Redes sociais -->
+        <div class="mt-4"  >
+          <a href="https://www.facebook.com/TelecallBr" class="text-white me-3 fs-5"><i class="bi bi-facebook social-icon"></i></a>
+          <a href="https://www.instagram.com/telecallbr/" class="text-white me-3 fs-5"><i class="bi bi-instagram social-icon"></i></a>
+          <a href="https://www.linkedin.com/company/telecall/" class="text-white fs-5"><i class="bi bi-linkedin social-icon"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center border-top border-secondary pt-3 mt-3">
+      <small class="text-muted">&copy; 2025 Telecall. Todos os direitos reservados.</small>
+    </div>
+  </div>
+</footer>
+
+
+
 
 
 
@@ -775,18 +915,65 @@
       const $modeToggle = $('#modeToggle');
       const $fontToggle = $('#fontToggle');
 
+      // Caminhos das imagens para trocar
+    const modavoApiImages = {
+      light: '../imagens-projeto/Modavo-01-gt.png',
+      dark: '../imagens-projeto/Modavo-02-gt.png'
+    };
+
+    const modavoPngImages = {
+      light: 'img.03/Modavo-PNG.png',
+      dark: '../imagens-projeto/Modavo-PNG-w.png' 
+    };
+
       function applyTheme(theme) {
         if (theme === 'dark') {
           $body.removeClass('bg-light text-dark').addClass('bg-dark text-light');
           $navbar.removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
           $modeToggle.html('<i class="bi bi-sun-fill"></i>');
           $logo.attr('src', 'img.03/telecall-logo-white-1.png');
-        } else {
-          $body.removeClass('bg-dark text-light').addClass('bg-light text-dark');
-          $navbar.removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
-          $modeToggle.html('<i class="bi bi-moon-stars-fill"></i>');
-          $logo.attr('src', 'img.03/logo-hdr-475x110.png');
-        }
+
+          // Trocar imagens da seção-3 para versão branca
+        $('.section-3 img[src*="caixa-api.png"]').attr('src', '../imagens-projeto/icones/caixa-api-w.png');
+        $('.section-3 img[src*="varejo-api.png"]').attr('src', '../imagens-projeto/icones/varejo-api-w.png');
+        $('.section-3 img[src*="call-api.png"]').attr('src', '../imagens-projeto/icones/call-api-w.png');
+        $('.section-3 img[src*="saude-api.png"]').attr('src', '../imagens-projeto/icones/saude-api-w.png');
+
+         // Trocar imagens Modavo para versão branca
+        $('.modavo-api').attr('src', '../imagens-projeto/Modavo-02-gt.png');
+        $('.modavo-png').attr('src','../imagens-projeto/Modavo-PNG-w.png');
+
+        // TROCA DE TEMA DO FOOTER
+        $('#footer').removeClass('light-theme').addClass('dark-theme');
+        $('#footer-logo').attr('src', '../imagens-projeto/telecall-logo-white-1.png'); // logo clara para dark
+
+        // Ícones das redes sociais: escuros no modo claro
+        $('.social-icon').removeClass('text-dark').addClass('text-light');
+
+      } else {
+        $body.removeClass('bg-dark text-light').addClass('bg-light text-dark');
+        $navbar.removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
+        $modeToggle.html('<i class="bi bi-moon-stars-fill"></i>');
+        $logo.attr('src', 'img.03/logo-hdr-475x110.png');
+
+        // Voltar imagens da seção-3 para versões normais
+        $('.section-3 img').each(function () {
+          const src = $(this).attr('src');
+          const normalSrc = src.replace('-w.png', '.png');
+          $(this).attr('src', normalSrc);
+        });
+
+         // Voltar imagens Modavo para versão normal
+        $('.modavo-api').attr('src', '../imagens-projeto/Modavo-01-gt.png');
+        $('.modavo-png').attr('src', '../imagens-projeto/Modavo-PNG.png');
+
+         // TROCA DE TEMA DO FOOTER
+        $('#footer').removeClass('dark-theme').addClass('light-theme');
+        $('#footer-logo').attr('src', '../imagens-projeto/logo-hdr-475x110.png'); // logo normal
+
+        // Ícones das redes sociais: claros no modo escuro
+        $('.social-icon').removeClass('text-light').addClass('text-dark');
+      }
         localStorage.setItem('theme', theme);
       }
       function applyFontSize(size) {
@@ -818,6 +1005,7 @@
       $fontToggle.on('click', toggleFontSize);
     });
   </script>
+
 </body>
 </html>
 
