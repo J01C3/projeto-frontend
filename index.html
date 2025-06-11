@@ -232,6 +232,10 @@
 
 
   /* SECTION-3 */
+
+  .h3-3 {
+    margin: 0;
+  }
     /* USOS */
     .h3-3::after {
       width: 10% !important;
@@ -814,7 +818,7 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
       <figure class="text-center">
-        <img src="imagens-projeto/modavo-platform.png" alt="Modavo Platform" class="img-fluid rounded">
+        <img src="imagens-projeto/modavo-platform.png" alt="Modavo Platform" class="img-fluid rounded  modavo-platform-img">
       </figure>
     </div>
   </div>
@@ -825,7 +829,7 @@
   <div class="container">
     <div class="row">
 
-      <!-- Nova Imagem no topo à esquerda -->
+      <!-- Imagem no topo à esquerda -->
     <div class="row mb-3">
       <div class="col-12 col-md-4">
         <img src="imagens-projeto/logo-hdr-475x110.png" alt="Imagem adicional" id="footer-logo" class="img-fluid" style="max-width: 150px;">
@@ -896,7 +900,7 @@
       <small class="text-muted">&copy; 2025 Telecall. Todos os direitos reservados.</small>
     </div>
   </div>
-  <a href="imagens-projeto/Modavo-01-gt.png"></a>
+  <a href="imagens-projeto/modavo-platform-w.png"></a>
 </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -943,6 +947,9 @@
 
         // Ícones das redes sociais: escuros no modo claro
         $('.social-icon').removeClass('text-dark').addClass('text-light');
+        
+        // TROCA DE IMG ANTES DO FOOTER MODO ESCURO
+        $('.modavo-platform-img').attr('src', 'imagens-projeto/modavo-platform-w.png');
 
       } else {
         $body.removeClass('bg-dark text-light').addClass('bg-light text-dark');
@@ -967,6 +974,9 @@
 
         // Ícones das redes sociais: claros no modo escuro
         $('.social-icon').removeClass('text-light').addClass('text-dark');
+        
+        // TROCA DE IMG ANTES DO FOOTER MODO CLARO
+        $('.modavo-platform-img').attr('src', 'imagens-projeto/modavo-platform.png');
       }
         localStorage.setItem('theme', theme);
       }
