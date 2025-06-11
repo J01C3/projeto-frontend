@@ -106,7 +106,7 @@
     if ($login.val() === usuarioSalvo && $senha.val() === senhaSalva) {
       toastSucesso.show();
       setTimeout(() => {
-        window.location.href = '../tela3/indexT302.html'; // redireciona
+        window.location.href = 'indexT302.html'; // redireciona
       }, 1500);
     } else {
       toastErro.show();
