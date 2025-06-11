@@ -21,11 +21,11 @@
         $logo.fadeOut(200, function () {
           if (theme === 'dark') {
             $themeIcon.removeClass().addClass('bi bi-sun-fill');
-            $logo.attr('src', '../imagens-projeto/telecall-logo-white-1.png');
+            $logo.attr('src', 'imagens-projeto/telecall-logo-white-1.png');
             $cadastrarBtn.removeClass().addClass('btn btn-light w-100 py-2 my-2');
           } else {
             $themeIcon.removeClass().addClass('bi bi-moon-stars-fill');
-            $logo.attr('src', '../imagens-projeto/logo-hdr-475x110.png');
+            $logo.attr('src', 'imagens-projeto/logo-hdr-475x110.png');
             $cadastrarBtn.removeClass().addClass('btn btn-dark w-100 py-2 my-2');
           }
           $logo.fadeIn(200);
