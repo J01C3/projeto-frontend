@@ -4,6 +4,7 @@
       height: 100%;
       margin: 0;
     }
+
     body {
       display: flex;
       justify-content: center;
@@ -12,17 +13,21 @@
       transition: background-color 0.5s ease, color 0.5s ease;
       font-size: 16px;
     }
-    .toast-container {
+
+    /*.toast-container CENTRO {
       position: fixed;
       top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1055;
-    }
+    }*/
+
     .form-login {
       max-width: 350px;
       padding: 1.025rem;
     }
+
+    /* Botões de acessibilidade (tema e fonte) */
     #themeToggle, #fontSizeBtn {
       margin: 25px;
       font-size: 1rem;
@@ -32,16 +37,19 @@
       box-shadow: none;
       cursor: pointer;
     }
+
     [data-bs-theme="light"] #themeIcon, [data-bs-theme="light"] #fontIcon {
       color: #777777;
     }
     [data-bs-theme="dark"] #themeIcon, [data-bs-theme="dark"] #fontIcon {
       color: white;
     }
+
     #fontSizeBtn:hover {
       color: inherit;
       display: block;
     }
+    
     [data-bs-theme="dark"] body {
       background-color: #212529;
       color: white;
@@ -50,6 +58,9 @@
       background-color: #f8f9fa;
       color: black;
     }
+
     #logoTelecall {
       transition: opacity 0.5s ease;
     }
+
+  

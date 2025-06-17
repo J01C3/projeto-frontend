@@ -1,0 +1,450 @@
+* {
+      font-family: 'Titillium Web', sans-serif;
+    }
+
+  /* NAVBAR */
+    body, nav, .navbar-nav .nav-link, .dropdown-menu {
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    #imglogo {
+      transition: all 0.5s ease;
+    }
+
+    .navbar-nav .nav-item {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+    
+    /* BOTOES TEMA/FONTE */
+    .mode-toggle, .font-toggle {
+      margin-right: 15px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      padding: 10px;
+      background-color: transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .mode-toggle i,
+    .font-toggle i {
+      transition: transform 0.3s ease, color 0.3s ease;
+      cursor: pointer; /* Mostrar que é clicável */
+    }
+
+    .mode-toggle:focus, .font-toggle:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px transparent;
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+
+    /* COR ESTILO NAV*/
+    .navbar-dark .navbar-nav .nav-link {
+      color: #f0f0f0;
+    }
+
+    .navbar-dark {
+      background-color: #333333 !important;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      color: #333333; /* cor da fonte */
+    }
+
+    body.bg-dark .navbar {
+      background-color: #202120b3 !important; /* cor da nav */
+   }
+
+    .nav-link.active {
+      border-bottom: 2px solid #53B2ED; /* "home" */
+      font-weight: normal;
+    }
+    
+    .nav-link:not(.active):hover {
+      border-bottom: 2px solid #53B2ED;
+    }
+
+    /* BOTOES DE ALTERNAR MODO DARK/LIGHT */
+    .bg-dark .bi-sun-fill {
+      color: #ffffff;
+    }
+    .bg-light .bi-moon-stars-fill {
+      color: #777777;
+    }
+    .bg-dark .font-toggle i {
+      color: #ffffff;
+    }
+    .bg-light .font-toggle i {
+      color: #545353;
+    }
+
+  /* LOGO MODAVO */
+    #Modavo-PNG {
+      max-width: 300px;
+      display: block;
+      margin-bottom: 4px;
+      margin-top: 30px;
+    }
+
+  /* H2 PRINCIPAL */
+    #h2-principal {
+      
+      margin-left: 44px;
+      margin-top: 9px;
+      padding-bottom: 10px;
+      display: inline-block;
+      color: #53B2ED;
+      font-weight: 600;
+    }
+
+    #h2-principal::after {
+      content: "";
+      display: block;
+      margin-top: 6.5px;
+      width: 50%;
+      border-bottom: 2px solid #53B2ED;
+      transform: translateX(-30px);
+    }
+    
+    /* CAROUSEL */
+    #carouselExampleIndicators {
+      margin-top: 30px;
+      width: auto;
+      height: auto;
+    }
+
+    #carouselExampleIndicators .carousel-inner,
+    #carouselExampleIndicators .carousel-item,
+    #carouselExampleIndicators img {
+      height: 310px;
+      object-fit: cover;
+    }
+  
+    /* CPAAS OQ É */
+    #h3-1 {
+      position: relative;
+      padding-top: 80px;
+      font-weight: 800;
+    }
+
+    #h3-1::after {
+      content: "";
+      display: block;
+      margin-top: 6.5px;
+      width: 50%;
+      border-bottom: 2px solid #53B2ED;
+      transform: translateX(-30px);
+    }
+    
+    /* SECTION-1 */
+    .section-1 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: left;
+      padding-left: 40px;
+    }
+
+    /* PARAGRAFOS SECTION-1 */
+    #p-h3-1 {
+      padding-top: 9px;
+      font-weight: 600;
+      font-size: large;
+      color: #53B2ED;
+    }
+
+    #p-h3-2 {
+      margin-top: -15px;
+      font-weight: 600;
+      font-size: large;
+      font-style: italic;
+    }
+
+    .p-h3 {
+      margin-top: 15px;
+      font-size: larger;
+      font-weight: 500;
+      line-height: 2;
+    }
+
+  /* CAIXA-AZUL */
+    .caixa-azul { 
+      justify-items: center;
+      background-color: #53B2ED;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* sombra suave */
+      padding: 25px;
+      margin: 30px auto;
+      font-size: larger;
+      max-width: 80%;
+      width: 100%;
+      text-align: center;
+    }
+
+
+    /* SECTION-2 */
+    .section-2 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: left;
+      padding-left: 40px;
+    }
+  
+    /* CPAAS DIGITAL */
+    .h3-2::after {
+      width: 20% !important;
+      transform: translateX(-30px)!important;
+      margin-bottom: 40px;
+      margin-left: 3px;
+    }
+
+
+  /* SECTION-3 */ 
+    /* USOS */
+    .h3-3::after {
+      content: "";
+      display: block;
+      width: 10% !important;
+      transform: translateX(-10px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px;
+    }
+
+    /* Estilo para desktop (≥ 992px) */
+   @media (min-width: 992px) {
+   .h3-3::after {
+      width: 7.5% !important;
+      transform: translateX(-55px) !important;
+      margin-left: 3px;
+  }
+}
+    /* tam das img */
+    .section-3 img {
+      max-width: 70%;
+    }
+
+    /* Aplica 50% no mobile */
+  @media (max-width: 767.98px) {
+    .section-3 img {
+      max-width: 40%;
+  }
+}
+    /* li SECTION-3*/
+    .li-icone {
+      list-style-type: none;
+      font-size: larger;
+      font-weight: 500;
+      justify-content: space-between;
+      line-height: 2.5;
+    }
+
+    /* /p azuis */
+    .p-item { 
+      font-size: 30px;
+      font-weight: 600;
+      color: #53B2ED;
+    }
+
+    /* HOVER>>> */
+
+    /* hover img>>> */
+    .icones img {
+      transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
+    }
+
+    .icones img:hover {
+      transform: scale(1.1) translateY(-5px); /* aumenta e sobe um pouco */
+      opacity: 0.8; /* dá um leve efeito de transparência */
+    }
+
+    /* hover /p em azul>>> */
+    .p-item {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .p-item:hover {
+      color: #297aac; /* cor azul, você pode trocar por outra */
+      transform: translateY(-3px); /* sobe um pouco */
+    }
+
+
+   /* SECTION-4 */
+    /* tam e borda */
+    .ex {
+      max-width: 95%;
+      border: 1px solid #53B2ED; /* Define a borda azul com 2px de espessura */
+      border-radius: 4px;     /* Opcional: bordas levemente arredondadas */
+    }
+
+    /* exemplos */
+    .h3-4::after {
+      width: 13% !important;
+      transform: translateX(-11px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px;
+    }
+
+    /* Estilo para desktop (≥ 992px) */
+   @media (min-width: 992px) {
+   .h3-4::after {
+      width: 7.5% !important;
+      transform: translateX(-55px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px;
+  }
+}
+
+  /* SECTION-5 */
+    /* vantagens */
+    .h3-5::after {
+      width: 20%!important;
+      transform: translateX(-35px)!important;
+      margin-bottom: 30px;
+      margin-left: 3px;
+    }
+
+     /* Estilo para desktop (≥ 992px) */
+   @media (min-width: 992px) {
+   .h3-5::after {
+      width: 9% !important;
+      transform: translateX(-55px) !important;
+      margin-bottom: 40px;
+      margin-left: 3px !important;
+  }
+}
+
+     /* li/lu */
+    .li-azul  {
+      margin-left: 10px;
+      list-style: none;
+      font-size: 30px;
+      font-weight: 600;
+      color: #53B2ED;
+      line-height: 2.5;
+    }
+
+    .li-normal  {
+      margin-left: 10px;
+      margin-top: 10px;
+      list-style: none;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+
+     /* CAIXA-AZUL-2 */
+    .Caixa-azul-2 {
+      justify-items: center;
+      background-color: #53B2ED;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* sombra suave */
+      padding: 40px;
+      margin: 90px auto;
+      max-width: 650px;
+      max-height: 900px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .Caixa-azul-2 p {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+
+    /* ÍCONES AZUIS */
+    .section-6 {
+     align-items: center;
+     margin-top: 190px;
+     
+   }
+
+   .circulo {
+     width: 170px; /* Largura do círculo */
+     gap: 20px;
+     height: 170px; /* Altura do círculo */
+     background-color: #53B2ED; /* Cor azul */
+     border-radius: 50%; /* Deixa o formato redondo */
+     transition: transform 0.3s ease;
+     margin: 0 auto 0.25rem;
+   }
+
+   .circulo img {
+    width: 100%;
+    height: 100%;
+    display: flex; /* centraliza a imagem */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* evita que a imagem ultrapasse o círculo */
+   }
+
+   @media (max-width: 767.98px) {
+  .circulo {
+    width: 125px;
+    height: 125px;
+  }
+}
+  
+   .circulo:hover {
+     transform: scale(1.1);
+     background-color: #2980b9;
+   }
+
+  .p-pa {
+    margin-top: 35px;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--bs-body-color); /* Usa a cor do tema (claro ou escuro) */
+  
+  }
+
+  body.text-light .p-pa {
+   color: #fff !important;
+ }
+
+/* SECTION-7 */
+.section-7 img {
+  margin-top: 150px;
+  margin-bottom: 200px; 
+}
+
+/* FOOTER */
+/* FOOTER DARK THEME */
+#footer.dark-theme {
+  background-color: #0b0c0e;
+  color: #f8f9fa;
+}
+
+#footer.dark-theme a {
+  color: #f8f9fa;
+}
+
+#footer.dark-theme a:hover {
+  color: #adb5bd;
+}
+
+/* FOOTER LIGHT THEME */
+#footer.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+#footer.light-theme a {
+  color: #212529;
+}
+
+#footer.light-theme a:hover {
+  color: #000;
+}
+
+/* footer logo */
+#footer-logo {
+  max-height: 80px;
+  margin-bottom: 20px;
+  }

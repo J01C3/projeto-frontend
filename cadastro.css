@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  font-size: 16px;
+}
+
+
+
+/* Botões de acessibilidade (tema e fonte) */
+#themeToggle, #fontSizeBtn {
+  margin: 25px;
+  font-size: 1rem;
+  padding: 8px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#fontSizeBtn:hover {
+  color: inherit;
+  display: block;
+}
+
+/* Cores dos ícones conforme tema */
+[data-bs-theme="light"] #themeIcon, 
+[data-bs-theme="light"] #fontIcon {
+  color: #777777;
+}
+
+[data-bs-theme="dark"] #themeIcon, 
+[data-bs-theme="dark"] #fontIcon {
+  color: white;
+}
+
+/* Tema escuro */
+[data-bs-theme="dark"] body {
+  background-color: #212529;
+  color: white;
+}
+
+/* Tema claro */
+[data-bs-theme="light"] body {
+  background-color: #f8f9fa;
+  color: black;
+}
+
+/* Animação do logo ao trocar tema */
+#logoTelecall {
+  transition: opacity 0.5s ease;
+}
+
+/* Tamanho e largura do formulário */
+.form-login {
+  max-width: 450px;
+  width: 100%;
+  margin-top: 40px; /* Espaço entre o topo e o formulário */
+}
+
+/* Tamanho e altura dos campos input e select */
+.form-floating > .form-control,
+.form-floating > .form-select {
+  height: 58px;
+  font-size: 1rem;
+}
+
+/* Estilo dos campos */
+input, select {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
