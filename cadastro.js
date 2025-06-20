@@ -41,7 +41,6 @@ $(document).ready(function () {
   function setTheme(theme) {
     $html.attr('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
-
     $logo.fadeOut(200, function () {
       if (theme === 'dark') {
         $themeIcon.removeClass().addClass('bi bi-sun-fill');
@@ -61,7 +60,7 @@ $(document).ready(function () {
   setTheme(savedTheme);
 
   // Clique no botão de tema: alterna entre dark e light
-  $themeBtn.on('click', function () {
+    $themeBtn.on('click', function () {
     const currentTheme = $html.attr('data-bs-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
@@ -96,39 +95,33 @@ function aplicarMascaraTelefone($campo) {
   $campo.on('input', function () {
     let valorNumerico = this.value.replace(/\D/g, '');
 
-    // Remove o +55 se for digitado manualmente
     if (valorNumerico.startsWith('55')) {
       valorNumerico = valorNumerico.substring(2);
     }
 
-    // Limita a 11 dígitos (DDD + 9 números, caso de celular)
     if (valorNumerico.length > 11) {
       valorNumerico = valorNumerico.slice(0, 11);
     }
 
-    // Formata o número
     let resultado = '(+55)';
 
     if (valorNumerico.length <= 2) {
       resultado += valorNumerico;
-    } else if (valorNumerico.length <= 6) {
-      resultado += valorNumerico.substring(0, 2) + '-' + valorNumerico.substring(2);
     } else {
-      resultado += valorNumerico.substring(0, 2) + '-' + valorNumerico.substring(2, 7) + '-' + valorNumerico.substring(7);
+      resultado += valorNumerico.substring(0, 2) + '-' + valorNumerico.substring(2, 10);
     }
 
     this.value = resultado;
   });
 
-  // Permite apagar livremente o campo, inclusive o (+55)
   $campo.on('keydown', function (e) {
-    // Se Backspace e o campo tem exatamente "(+55)", limpa tudo
     if (e.key === 'Backspace' && this.value === '(+55)') {
       this.value = '';
       e.preventDefault();
     }
   });
 }
+
   aplicarMascaraTelefone($celular);
   aplicarMascaraTelefone($fixo);
 
@@ -143,7 +136,6 @@ function aplicarMascaraTelefone($campo) {
     let valido = true;
 
     // Validações conforme regras
-
     if (!/^[A-Za-zÀ-ÿ\s]{15,60}$/.test($nome.val().trim())) {
       $nome.addClass('is-invalid');
       $nomeFeedback.text('Nome deve ter entre 15 e 60 letras (somente letras e espaços).');
@@ -168,11 +160,13 @@ function aplicarMascaraTelefone($campo) {
       valido = false;
     }
 
-    if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test($cpf.val().trim())) {
-      $cpf.addClass('is-invalid');
-      $cpfFeedback.text('CPF deve estar no formato 000.000.000-00.');
-      valido = false;
-    }
+
+  if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test($cpf.val().trim())) {
+  $cpf.addClass('is-invalid');
+  $cpfFeedback.text('CPF deve estar no formato 000.000.000-00.');
+  valido = false;
+}
+
 
     if (!/^\(\+55\)\d{2}-\d{8}$/.test($celular.val().trim())) {
       $celular.addClass('is-invalid');

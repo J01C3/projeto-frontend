@@ -83,4 +83,27 @@ input, select {
   border-radius: 4px;
 }
 
+@media (max-width: 576px) {
+  .form-login {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  #logoTelecall {
+    width: 140px;
+    height: auto;
+  }
+
+  button, input, select {
+    font-size: 1rem;
+  }
+
+  .toast-container {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+  }
+}
+
+
 
