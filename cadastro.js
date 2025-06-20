@@ -92,18 +92,43 @@ $(document).ready(function () {
   $fontSizeBtn.on('click', alterarFonte);
 
   // Máscara para telefone no formato (+55)XX-XXXXXXXX
-  function aplicarMascaraTelefone($campo) {
-    $campo.on('input', function () {
-      let v = this.value.replace(/\D/g, '').slice(0, 10);
-      if (v.length >= 10) {
-        v = v.replace(/^(\d{2})(\d{8})/, '(+55)$1-$2');
-      } else if (v.length >= 2) {
-        v = v.replace(/^(\d{2})/, '(+55)$1-');
-      }
-      this.value = v;
-    });
-  }
+function aplicarMascaraTelefone($campo) {
+  $campo.on('input', function () {
+    let valorNumerico = this.value.replace(/\D/g, '');
 
+    // Remove o +55 se for digitado manualmente
+    if (valorNumerico.startsWith('55')) {
+      valorNumerico = valorNumerico.substring(2);
+    }
+
+    // Limita a 11 dígitos (DDD + 9 números, caso de celular)
+    if (valorNumerico.length > 11) {
+      valorNumerico = valorNumerico.slice(0, 11);
+    }
+
+    // Formata o número
+    let resultado = '(+55)';
+
+    if (valorNumerico.length <= 2) {
+      resultado += valorNumerico;
+    } else if (valorNumerico.length <= 6) {
+      resultado += valorNumerico.substring(0, 2) + '-' + valorNumerico.substring(2);
+    } else {
+      resultado += valorNumerico.substring(0, 2) + '-' + valorNumerico.substring(2, 7) + '-' + valorNumerico.substring(7);
+    }
+
+    this.value = resultado;
+  });
+
+  // Permite apagar livremente o campo, inclusive o (+55)
+  $campo.on('keydown', function (e) {
+    // Se Backspace e o campo tem exatamente "(+55)", limpa tudo
+    if (e.key === 'Backspace' && this.value === '(+55)') {
+      this.value = '';
+      e.preventDefault();
+    }
+  });
+}
   aplicarMascaraTelefone($celular);
   aplicarMascaraTelefone($fixo);
 

@@ -1,0 +1,245 @@
+* {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.mode-toggle {
+  color: #4b4b4bba;
+  font-size: 1rem;
+  padding: 8px 8px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+
+.mode-toggle:hover {
+  border-color: #ffffff00;
+}
+
+.mode-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #53B2ED;
+  font-weight: normal;
+}
+
+.nav-link:not(.active):hover {
+  border-bottom: 2px solid #53B2ED;
+}
+
+[data-bs-theme="dark"] .bi-sun {
+  color: #ffffff;
+}
+
+.font-toggle {
+  margin-right: 20px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+  color: inherit;
+}
+
+.font-toggle:hover {
+  border-color: #ffffff00;
+}
+
+.font-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+main h2, main h4 {
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+main h2 {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+main h4 {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 19px;
+}
+
+.descricao-oquee {
+  font-size: 30px;       
+}
+
+.linha-azul {
+  width: 120px;
+  height: 4px;
+  background-color: #53B2ED;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 2px;
+}
+
+
+[data-bs-theme="dark"] main h2, 
+[data-bs-theme="dark"] main h4 {
+  color: #fff;
+}
+
+main ul, main ol {
+  padding-left: 1.2rem;
+}
+
+main ul li,
+main ol li {
+  font-size: 20px;
+}
+
+main section {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+
+.subtitulo {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+[data-bs-theme="dark"] .subtitulo {
+  color: #fff;
+}
+
+/* FOOTER */
+
+.footer {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+/* ----------- Responsividade Adicional ------------ */
+
+@media (max-width: 991.98px) {
+  .mode-toggle {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+
+  #graficoImg,
+  #telefoneImg,
+  #print,
+  #iconesImg {
+    margin: 20px auto 0 auto !important;
+    display: block;
+    width: 100% !important;
+    max-width: 350px;
+  }
+
+  #mulherImg,
+  #engrenagemImg,
+  #celularImg {
+    margin: 0 auto 20px auto;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .row.text-center .col-md-4 {
+    margin-bottom: 20px;
+  }
+
+  main ul li {
+    font-size: 18px;
+  }
+
+  .descricao-oquee {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  main h4 {
+    font-size: 28px;
+  }
+
+  p, .subtitulo {
+    font-size: 20px;
+  }
+
+  .linha-azul {
+    width: 80px;
+  }
+}
+
+/* FOOTER */
+/* FOOTER DARK THEME */
+#footer.dark-theme {
+  background-color: #0b0c0e;
+  color: #f8f9fa;
+}
+
+#footer.dark-theme a {
+  color: #f8f9fa;
+}
+
+#footer.dark-theme a:hover {
+  color: #adb5bd;
+}
+
+/* FOOTER LIGHT THEME */
+#footer.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+#footer.light-theme a {
+  color: #212529;
+}
+
+#footer.light-theme a:hover {
+  color: #000;
+}
+
+/* footer logo */
+#footer-logo {
+  max-height: 80px;
+  margin-bottom: 20px;
+  }
+
+  /* Ícones sociais no modo claro */
+.light-theme .social-icon {
+  color: #212529; /* preto ou cinza escuro */
+}
+
+/* Ícones sociais no modo escuro */
+.dark-theme .social-icon {
+  color: #f8f9fa; /* branco */
+}
