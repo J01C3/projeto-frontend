@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const modeToggle = document.getElementById('modeToggle');
   const html = document.documentElement;
-  const logo = document.getElementById('imglogo');
-
   const $body = $('body');
   const $navbar = $('#navbar');
   const $modeToggle = $('#modeToggle');
   const $logo = $('#imglogo');
   const $footer = $('#footer');
   const $footerLogo = $('#footer-logo');
+  const $fontToggle = $('#fontToggle');
   const $fontToggleIcon = $('#fontToggle i');
 
+  // Aplica o tema (light ou dark)
   function applyTheme(theme) {
     html.setAttribute('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
@@ -34,30 +33,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Tema salvo no localStorage
-  const storedTheme = localStorage.getItem('theme');
-  applyTheme(storedTheme || 'light');
-
-  modeToggle.addEventListener('click', () => {
-    const currentTheme = html.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    applyTheme(newTheme);
-  });
-
-document.addEventListener('DOMContentLoaded', function () {
-  const $body = $('body');
-  const $fontToggle = $('#fontToggle');
-
+  // Aplica o tamanho da fonte no body
   function applyFontSize(size) {
-    console.log('Aplicando tamanho de fonte:', size);
     $body.css('font-size', size + 'px');
     localStorage.setItem('fontSize', size);
   }
 
+  // Alterna o tamanho da fonte entre 14, 16 e 18
   function toggleFontSize() {
     const currentSize = parseInt($body.css('font-size'));
-    console.log('Tamanho atual:', currentSize);
     let newSize;
+
+    console.log("Botão de fonte clicado");
 
     if (currentSize <= 14) {
       newSize = 16;
@@ -70,13 +57,25 @@ document.addEventListener('DOMContentLoaded', function () {
     applyFontSize(newSize);
   }
 
+  // Inicialização: aplica tema salvo ou light por padrão
+  const storedTheme = localStorage.getItem('theme');
+  applyTheme(storedTheme || 'light');
+
+  // Inicialização: aplica tamanho de fonte salvo ou padrão 14
   const savedSize = localStorage.getItem('fontSize');
   if (savedSize) {
     applyFontSize(savedSize);
+  } else {
+    applyFontSize(14);
   }
+
+  // Eventos dos botões
+  $modeToggle.on('click', () => {
+    const currentTheme = html.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    applyTheme(newTheme);
+  });
 
   $fontToggle.on('click', toggleFontSize);
 });
 
-
-});
