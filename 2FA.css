@@ -1,0 +1,85 @@
+ * {
+      font-family: 'Titillium Web', sans-serif;
+    }
+
+    .navbar-nav .nav-item {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+
+    .mode-toggle {
+      margin-right: 65px;
+      margin-left: -32.5px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      padding: 10px;
+      background-color: transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      border-color: #ffffff00;
+    }
+
+    .mode-toggle:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .dropdown-menu {
+      display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .nav-link.active {
+      border-bottom: 2px solid #53B2ED;
+      font-weight: normal;
+    }
+
+    .nav-link:not(.active):hover {
+      border-bottom: 2px solid #53B2ED;
+    }
+
+    .img-passo2 {
+      width: 165px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .img-passo3 {
+      width: 130px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    [data-bs-theme="dark"] .bi-sun {
+      color: #ffffff;
+    }
+
+    body {
+      font-size: 23px;
+    }
+
+    .underline-heading {
+      border-bottom: 3px solid #53B2ED;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .quem-usa .col-lg-2,
+    .quem-usa .col-md-4 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 991px) {
+      .quem-usa .col-md-4 {
+        margin-bottom: 30px;
+      }
+    }

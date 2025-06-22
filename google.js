@@ -28,9 +28,12 @@ function applyTheme(theme) {
     $celular.attr('src', 'imagens-projeto/celularmodoescuro.png');
     $icones.attr('src', 'imagens-projeto/iconesmodoescuro.png');
 
-    // TROCA DE TEMA DO FOOTER
+    // Footer
     $('#footer').removeClass('light-theme').addClass('dark-theme');
-    $('#footer-logo').attr('src', 'imagens-projeto/telecall-logo-white-1.png'); // logo clara para dark
+    $('#footer-logo').attr('src', 'imagens-projeto/telecall-logo-white-1.png');
+
+    // Ícone do botão de fonte - branco no modo escuro
+    $('#fontToggle i').css('color', 'white');
 
   } else {
     $grafico.attr('src', 'imagens-projeto/graficomodoclaro.png');
@@ -40,14 +43,16 @@ function applyTheme(theme) {
     $celular.attr('src', 'imagens-projeto/celularmodoclaro.png');
     $icones.attr('src' , 'imagens-projeto/iconesmodoclaro.png');
 
-    // TROCA DE TEMA DO FOOTER
+    // Footer
     $('#footer').removeClass('dark-theme').addClass('light-theme');
-    $('#footer-logo').attr('src', 'imagens-projeto/logo-hdr-475x110.png'); // logo normal
+    $('#footer-logo').attr('src', 'imagens-projeto/logo-hdr-475x110.png');
+
+    // Ícone do botão de fonte - preto no modo claro
+    $('#fontToggle i').css('color', 'black');
   }
 
   localStorage.setItem('theme', theme);
 }
-
 
 const $body = $('body');
 const $fontToggle = $('#fontToggle');

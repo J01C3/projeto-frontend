@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cpaas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">  
+  <link rel="icon" href="imagens-projeto/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="numero.css">
+</head>
+<body class="teste bg-light text-dark">
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-5" href="#">
+        <img id="imglogo" src="imagens-projeto/logo-hdr-475x110.png" alt="Logo" width="155" height="35.5">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastre-se</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Serviços</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="2FA.html">2FA</a></li>
+              <li><a class="dropdown-item" href="numero.html">Número Máscara</a></li>
+              <li><a class="dropdown-item" href="google.html">Google Verified Calls</a></li>
+              <li><a class="dropdown-item" href="SMS.html">SMS Programável</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <button class="modetoggle" id="modeToggle"><i class="bi bi-moon-stars"></i></button>
+          </li>
+
+          <li class="nav-item">
+          <button class="font-toggle" id="fontToggle" aria-label="Ajustar tamanho da fonte">
+            <i class="bi bi-fonts fs-5"></i>
+          </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sessão 1 -->
+  <div class="containerZ">
+  <!-- Header -->
+  
+  <div class="ps-0 ms-0">
+    <h1 class="h1principal text-md-start ps-0 ms-0">Número Máscara</h1>
+    <div>
+      <span class="linha-azul"></span>
+    </div>
+  </div>
+
+
+  <!-- Corpo com texto e imagem -->
+  <div class="body row align-items-start">
+    <!-- Texto -->
+    <div class="infoContainer col-12 col-md-6 mb-4 mb-md-0 text-md-start">
+      <div class="tittleAndSubtittleContainer mb-3">
+        <h3 class="h3-1">Proteja identidades profissionais</h3>
+        <p class="p-1">
+          <strong>
+              Garanta aos seus clientes a capacidade de fazer chamadas e enviar<br>
+              mensagens sem expor seus números de telefone pessoais.
+          </strong>
+        </p>
+      </div>
+      <div class="listContainer">
+        <ul class="lista-1">
+          <li><strong>Mascarar</strong> um número de telefone para interações com mais privacidade.</li>
+          <li><strong>Permite</strong> que empresas façam negócios usando menos números de telefone.</li>
+          <li><strong>Oferece</strong> uma experiência mais segura e profissional.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Imagem -->
+    <div class="col-12 col-md-6 d-flex">
+      <img src="imagens-projeto/cel.png" alt="Imagem de ligação com número máscara" class="img-fluid" style="max-width: 350px;">
+    </div>
+  </div>
+</div>
+
+<!--Sessâo 2-->
+  <section>
+    <div>
+        <h1 class="h1principal" style="padding-left: 70px;">Como funciona</h1>
+    <div>
+      <span class="linha-azul"></span>
+    </div>
+      
+
+<!--Lista 1-->
+<section class="container my-4">
+    <div class="row text-center text-md-start align-items-stretch gx-2">
+
+        <!-- Lista 1 -->
+        <div class="col-12 col-md-4 mb-3">
+            <div class="d-flex flex-column h-100">
+                <h3 class="h3-2">Usuário faz uma<br>chamada através<br>de um aplicativo.</h3>
+                <div class="img-s3">
+                    <img src="imagens-projeto/cliente.png" alt="Imagem usuário" class="img-fluid img-s2">
+                   
+                </div>
+                <p class="p-2 mt-auto">
+                    Ex: usuário liga para o<br>
+                    entregador ou motorista<br>
+                    de táxi ou entra em<br>
+                    contato com a central de<br>
+                    atendimento
+                </p>
+            </div>
+        </div>
+
+        <!-- Lista 2 -->
+        <div class="col-12 col-md-4 mb-3">
+            <div class="d-flex flex-column h-100">
+                <h3 class="h3-2">Plataforma<br>mascara o número<br>original.</h3>
+                <div class="img-s3">
+                    <img src="imagens-projeto/nuvem.png" alt="Imagem usuário" class="img-fluid img-s2">
+                   
+                </div>
+                <p class="p-2 mt-auto">
+                    A plataforma recebe a<br>chamada e mascara o<br>número antes de conectar<br>com o destinatário.
+                </p>
+            </div>
+        </div>
+
+        <!-- Lista 3 -->
+        <div class="col-12 col-md-4 mb-3">
+            <div class="d-flex flex-column h-100">
+                <h3 class="h3-2">Ambas as partes<br> são conectadas.</h3>
+                <div class="img-s3">
+                    <img src="imagens-projeto/conversa.png" alt="Imagem usuário" class="img-fluid img-s2" id="img0">
+                </div>
+                <p class="p-2 mt-auto">
+                    A plataforma conecta ambas<br> as partes mantendo a<br>privacidade dos dois.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    
+    </section>
+
+    <section>
+  <div style="padding-left: 70px;">
+    <h1 class="h1principal">Quem usa?</h1>
+  </div>
+  <span class="linha-azul"></span>
+
+  <!-- Container dos blocos -->
+  <div style="display: flex; gap: 100px; padding-left: 70px; flex-wrap: wrap; margin-top: 80px;">
+
+    <!-- Bloco 1 -->
+    <div style="text-align: center; width: 200px;">
+      <img src="imagens-projeto/carro1.png" alt="icone carro" style="width: 250px; height: auto;">
+      <h3><strong>Apps de Transporte</strong></h3>
+      <p>Permite que motorista e<br>
+        passageiro se comuniquem<br>
+        sem compartilhar seus<br>
+        números pessoais.</p>
+    </div>
+
+    <!-- Bloco 2 -->
+    <div style="text-align: center; width: 200px;">
+      <img src="imagens-projeto/relacionamentocel.png" alt="icone relacionamento" style="width: 250px; height: auto;">
+      <h3><strong>Apps de Relacionamento</strong></h3>
+      <p>Permite uma maneira<br>
+        privada e segura para<br>
+        usuários interagirem sem<br>
+        expor contatos pessoais.</p>
+    </div>
+
+    <!-- Bloco 3 -->
+    <div style="text-align: center; width: 200px;">
+      <img src="imagens-projeto/carrinho.png" alt="icone de carrinho" style="width: 250px; height: auto;">
+      <h3><strong>E-Commerce</strong></h3>
+      <p>Permite que clientes<br>
+        entrem em contato através<br>
+        do aplicativo. Podem<br>
+        também integrar chamadas<br>
+        internacionais.</p>
+    </div>
+
+    <!-- Bloco 4 -->
+    <div style="text-align: center; width: 200px;">
+      <img src="imagens-projeto/caminhao.png" alt="icone caminhao" style="width: 250px; height: auto;">
+      <h3><strong>Entregas & Logística</strong></h3>
+      <p>Mantenha seu cliente<br>
+        informado sobre<br>
+        entregas e serviços, tire<br>
+        dúvidas, etc.</p>
+    </div>
+
+  </div>
+</section>
+
+    <section>
+  <div class="container-flex">
+    
+    <div style="padding-left: 70px; flex: 1 1 300px; min-width: 280px;">
+      <h1 class="h1principal">Quem mais pode usar?</h1>
+      <span class="linha-azul"></span>
+      <h3 style="margin-top: 50px; color: rgb(13, 184, 214);">
+        43% das empresas brasileiras adotou o Home<br>
+        Office como padrão.<br><br>
+        Mesmo após o fim da pandemia, estatísticas<br>
+        indicam que o modelo de trabalho Home<br>
+        Office deve crescer cerca de 30%.
+      </h3>
+      <p style="margin-top: 40px; font-size: larger;">
+        Funcionários que não possuem celular empresarial ou ramal<br>
+        virtual podem se beneficiar do uso de um número máscara<br>
+        permanentemente do trabalho vinculado ao seu telefone celular,<br>
+        assim protegendo seus números pessoais.
+      </p>
+      <a href="https://www.oberlo.com/br/blog/estatisticas-home-office" style="font-size: 12px; margin-left: -50px;">Fonte: https://www.oberlo.com/br/blog/estatisticas-home-office</a>
+    </div>
+
+    <div class="imagem-container">
+      <img src="imagens-projeto/homeofice.png" alt="imagem homeofice" class="img-homeoffice">
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="footer" class="footer pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+
+      <!-- Imagem no topo à esquerda -->
+    <div class="row mb-3">
+      <div class="col-12 col-md-4">
+        <img src="imagens-projeto/logo-hdr-475x110.png" alt="Imagem adicional" id="footer-logo" class="img-fluid" style="max-width: 150px;">
+      </div>
+    </div>
+
+      <!-- Coluna 1 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Institucional</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/#depoimentos" class="text-secondary text-decoration-none">Depoimentos</a></li>
+          <li><a href="https://expert.cloud.brasil.adp.com/rhweb88/curricweb_principal.r?excid,0610c321660c-b38d-33a9-db14-9b2818568f18" class="text-secondary text-decoration-none">Carreiras</a></li>
+          <li><a href="https://www.telecall.com/contato/" class="text-secondary text-decoration-none">Contato</a></li>
+          <li><a href="https://www.telecall.com/vendas/" class="text-secondary text-decoration-none">Vendas</a></li>
+          <li><a href="https://www.telecall.com/faq/" class="text-secondary text-decoration-none">FAQ</a></li>
+          <li><a href="https://www.telecall.com/politica-e-privacidade/" class="text-secondary text-decoration-none">Política e Privacidade</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Internet</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-secondary text-decoration-none">Internet Dedicada</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Banda Larga</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Wi-Fi</a></li>
+        </ul>
+        <h5 class="mt-3">Outras Soluções</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/outsourcing-de-hardware/" class="text-secondary text-decoration-none">Outsourcing de Hardware</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Telefone</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/internet-dedicada/" class="text-secondary text-decoration-none">PABX IP Virtual</a></li>
+          <li><a href="https://www.telecall.com/banda-larga/" class="text-secondary text-decoration-none">E1</a></li>
+          <li><a href="https://www.telecall.com/wi-fi-e-hotspot/" class="text-secondary text-decoration-none">Números 0800 e 40XX</a></li>
+        </ul>
+        <h5 class="mt-3">Mobilidade</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/contato/" class="text-secondary text-decoration-none">Celular Empresarial</a></li>
+          <li><a href="https://www.telecall.com/mvna-e-2/" class="text-secondary text-decoration-none">MVNA</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Rede e Infraestrutura</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.telecall.com/ponto-a-ponto/" class="text-secondary text-decoration-none">Ponto-a-Ponto</a></li>
+          <li><a href="https://www.telecall.com/mpls/" class="text-secondary text-decoration-none">MPLS</a></li>
+          <li><a href="https://www.telecall.com/fibra-apagada-e-dutos/" class="text-secondary text-decoration-none">Fibra Apagada e Dutos</a></li>
+        </ul>
+
+        <!-- Redes sociais -->
+        <div class="mt-4"  >
+          <a href="https://www.facebook.com/TelecallBr" class="text-white me-3 fs-5"><i class="bi bi-facebook social-icon"></i></a>
+          <a href="https://www.instagram.com/telecallbr/" class="text-white me-3 fs-5"><i class="bi bi-instagram social-icon"></i></a>
+          <a href="https://www.linkedin.com/company/telecall/" class="text-white fs-5"><i class="bi bi-linkedin social-icon"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center border-top border-secondary pt-3 mt-3">
+      <small class="text-muted">&copy; 2025 Telecall. Todos os direitos reservados.</small>
+    </div>
+  </div>
+</footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="numero.js"></script>
+
+    
+  
+</body>
+</html>

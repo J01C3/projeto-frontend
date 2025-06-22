@@ -1,0 +1,176 @@
+* {
+      font-family: 'Titillium Web', sans-serif;
+    }
+
+    .navbar-nav .nav-item {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+    .mode-toggle {
+      margin-right: 65px;
+      margin-left: -32.5px;
+      border: 2px solid rgba(255, 255, 255, 0);
+      border-radius: 50%;
+      padding: 10px;
+      background-color: transparent;
+      transition: border-color 0.3s ease;
+    }
+    .mode-toggle:hover {
+      border-color: #ffffff00;
+    }
+    .mode-toggle:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0);
+    }
+    .dropdown-menu {
+      display: none;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #f0f0f0;
+    }
+    .bg-dark .navbar-dark .navbar-nav .nav-link {
+      color: #f0f0f0;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffcc00;
+    }
+    .navbar-dark {
+      background-color: #333333 !important;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      color: #333;
+    }
+    .nav-link.active {
+      border-bottom: 2px solid #53B2ED;
+      font-weight: normal;
+    }
+    .nav-link:not(.active):hover {
+      border-bottom: 2px solid #53B2ED;
+    }
+    .bg-dark .bi-sun {
+      color: #ffffff;
+    }
+
+    .body {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content:space-between;
+      margin-top: 5px;
+    }
+
+
+
+    /*sessâo 1 */
+    .containerZ {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .linha-azul {
+        display: flex;
+        width: 380px; /* um pouco maior agora */
+        height: 5px;
+        margin-top: -20px;
+        margin-left: -80px;
+        background-color: #53B2ED;
+}
+
+    .h3-1 {
+        margin-top: -35px;
+        font-size: 35px;
+    }
+
+
+    .p-1 {
+        font-size: 18px;
+    }
+
+    /*sessâo 1 */
+    .infoContainer {
+      display: flex;
+      flex-direction: column;
+      padding: 60px;
+      flex: 1;
+    }
+
+    .img-fluid {
+      width: 500px;
+      max-width: 100%;
+      position: relative;
+      margin-top: -65px;
+    }
+
+    /*sessâo 2 */
+    .container {
+        gap: 10px;
+    }
+    
+    .img-s2 {
+        width: 210px;
+        
+    }
+    .img-s3 {
+        margin-top: 60px;
+    }
+
+    .seta1 {
+        margin-bottom: 70px;
+        width: 110px;
+        margin-left: auto;
+        margin-right: 0;
+
+    }
+
+    .seta2 {
+        width: 150px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .p-2 {
+        font-size: larger;
+    }
+
+    #img0 {
+        margin-top: -10px;
+
+    }
+
+
+
+
+
+
+    .tittleAndSubtittleContainer {
+      display: flex;
+      gap:24px;
+      flex-direction: column;
+
+   
+    }
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+      font-size: larger;
+    }
+    
+    .h1principal {
+      font-size: 72px;      
+      font-weight: 700;
+      padding: 60px 10px 10px 60px;
+    }
+
+    .h1principal {
+       font-weight: 700;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+  font-size: 72px; 
+}

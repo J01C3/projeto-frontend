@@ -17,9 +17,27 @@
   transition: border-color 0.3s ease;
 }
 
+/* Modo Escuro */
+[data-bs-theme="dark"] .bi-sun-fill {
+  color: #ffffff;
+}
+
+[data-bs-theme="dark"] .font-toggle i {
+  color: #ffffff;
+}
+
+/* Modo Claro */
+[data-bs-theme="light"] .bi-moon-stars-fill {
+  color: #777777;
+}
+
+[data-bs-theme="light"] .font-toggle i {
+  color: #575757;
+}
+
 
 .mode-toggle:hover {
-  border-color: #ffffff00;
+  border-color: none;
 }
 
 .mode-toggle:focus {
