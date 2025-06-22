@@ -1,3 +1,5 @@
+$(document).ready(() => {
+
 const modeToggle = document.getElementById('modeToggle');
 const html = document.documentElement;
 const logo = document.getElementById('imglogo');
@@ -87,4 +89,5 @@ modeToggle.addEventListener('click', () => {
   const currentTheme = html.getAttribute('data-bs-theme');
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
   applyTheme(newTheme);
+});
 });
